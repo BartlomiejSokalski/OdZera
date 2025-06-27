@@ -1,15 +1,4 @@
-form {
-  width: 300px;
-  height: auto;
+h1 {
+  color: blue;
   margin: 50px auto;
-}
-input {
-  margin: 10px;
-}
-input,
-textarea,
-button {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
 }
