@@ -34,4 +34,4 @@ To repozytorium jest aktywnie rozwijane i będzie aktualizowane w miarę przecho
 ---
 
 Jeśli chcesz zobaczyć moje postępy w czasie rzeczywistym – zapraszam na mój profil GitHub:  
-https://github.com/TwojNickTutaj
+github.com/BartlomiejSokalski
