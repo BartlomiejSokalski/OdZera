@@ -49,7 +49,7 @@ input {
   transition: background-color 0.5s ease-in-out;
 }
 .button:hover {
-  background-color: #0654a3;
+  background-color: #064e96;
   cursor: pointer;
 }
 
