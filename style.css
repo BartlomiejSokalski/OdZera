@@ -47,3 +47,89 @@ input {
   margin: 10px auto;
   display: block;
 }
+
+@media screen and (min-width: 1024px) {
+  .card {
+    width: 600px;
+    height: auto;
+    padding-inline: 40px;
+    flex-direction: row;
+  }
+  ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  li {
+    flex: 1 1 40%;
+  }
+  .button {
+    width: 200px;
+    font-size: 1.2rem;
+  }
+  header {
+    height: 100px;
+    font-size: 1.2rem;
+  }
+  ul li input {
+    width: 24px;
+    height: 24px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .card {
+    width: 90%;
+    height: auto;
+    padding-inline: 20px;
+    flex-direction: column;
+  }
+  ul {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  li {
+    flex: 1 1 100%;
+  }
+  .button {
+    width: 60%;
+    font-size: 1rem;
+  }
+  header {
+    height: 90px;
+    font-size: 1.1rem;
+  }
+  ul li input {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: 95%;
+    height: auto;
+    padding-inline: 16px;
+    flex-direction: column;
+  }
+  ul {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  li {
+    flex: 1 1 100%;
+  }
+  .button {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+  header {
+    height: 70px;
+    font-size: 1rem;
+  }
+  ul li input {
+    width: 18px;
+    height: 18px;
+  }
+}
