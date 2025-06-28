@@ -1,189 +1,29 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  overflow-x: hidden;
-}
-header {
-  background-color: #1e90ff;
-  color: #fff;
-  height: 80px;
+.nav {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-sizing: border-box;
-  overflow-x: hidden;
+  height: 200px;
+  background-color: black;
 }
-.card {
+.linki {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 50px auto;
-  width: 320px;
-  height: auto;
-  background-color: #f0f0f0;
-  border-radius: 12px;
-  box-shadow: 12px 10px 12px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  padding-inline: 20px;
-  border: 1px solid #ccc;
   text-align: center;
-  padding: 40px;
-}
-ul {
   padding: 10px;
-  margin: 0 auto;
+  width: 80px;
+  height: 100vh;
+  color: #fff;
+  position: fixed;
+  gap: 40px;
+  background-color: red;
 }
-li {
-  list-style: none;
-  padding: 2px;
-  display: flex;
-}
-input {
+a {
+  color: #ccc;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
   padding: 5px;
 }
 
-.button {
-  width: 30%;
-  background-color: #1e90ff;
-  color: #fff;
-  border-radius: 5px;
-  border: none;
-  margin: 10px auto;
-  display: block;
-  transition: background-color 0.5s ease-in-out;
-}
-.button:hover {
-  background-color: #064e96;
-  cursor: pointer;
-}
-form {
-  width: 100%;
-  height: auto;
-  align-items: center;
-}
-
-@media screen and (min-width: 769px) {
-  .card {
-    width: 600px;
-    height: auto;
-    padding-inline: 40px;
-    flex-direction: column;
-  }
-  ul {
-    gap: 20px;
-  }
-  li {
-    flex: 1 1 40%;
-    gap: 10px;
-  }
-  .button {
-    width: 200px;
-    font-size: 1.2rem;
-  }
-  header {
-    height: 100px;
-    font-size: 1.2rem;
-  }
-  ul li input {
-    width: 20px;
-    height: 20px;
-  }
-  form {
-    width: 100%;
-    height: auto;
-    align-items: center;
-    gap: 10px;
-  }
-}
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .card {
-    width: 90%;
-    height: auto;
-    padding-inline: 20px;
-    flex-direction: column;
-  }
-  ul {
-    gap: 10px;
-  }
-  li {
-    flex: 1 1 100%;
-    gap: 10px;
-  }
-  .button {
-    width: 30%;
-    font-size: 1rem;
-  }
-  header {
-    height: 90px;
-    font-size: 1.1rem;
-  }
-  ul li input {
-    width: 20px;
-    height: 20px;
-  }
-  form {
-    width: 100%;
-    height: auto;
-    align-items: center;
-  }
-}
-
-@media screen and (min-width: 379px) and (max-width: 480px) {
-  .card {
-    width: 95%;
-    height: auto;
-    padding-inline: 16px;
-    flex-direction: column;
-  }
-  ul {
-    gap: 8px;
-  }
-  li {
-    flex: 1 1 100%;
-    gap: 8px;
-  }
-  .button {
-    width: 30%;
-    font-size: 0.9rem;
-  }
-  header {
-    height: 70px;
-    font-size: 1rem;
-  }
-  ul li input {
-    width: 15px;
-    height: 15px;
-  }
-}
-@media screen and (max-width: 378px) {
-  .card {
-    width: 100%;
-    height: auto;
-    padding-inline: 10px;
-    flex-direction: column;
-  }
-  ul {
-    gap: 6px;
-  }
-  li {
-    flex: 1 1 100%;
-    gap: 6px;
-  }
-  .button {
-    width: 30%;
-    font-size: 0.8rem;
-  }
-  header {
-    height: 60px;
-    font-size: 0.9rem;
-  }
-  ul li input {
-    width: 12px;
-    height: 12px;
-  }
+a:hover {
+  color: wheat;
+  background-color: red;
+  border: 0px solid #fff;
 }
