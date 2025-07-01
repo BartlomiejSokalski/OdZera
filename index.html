@@ -62,6 +62,7 @@
           />
 
           <img
+            class="blad1"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-KB-eS54kqUVy0h23Yaf6d0YP1jFfjcOn3A&s"
             alt="xd4"
           />
@@ -79,26 +80,31 @@
       <section class="kontakt" id="kontakt">
         <form method="post">
           <label for="imie">Imię</label>
-          <input name="name" type="text" id="imie" placeholder="Imię" />
+          <input
+            name="name"
+            type="text"
+            id="imie"
+            placeholder="Imię"
+            required
+          />
           <label for="nazwisko">Nazwisko</label>
           <input
             name="surname"
             type="text"
             id="nazwisko"
             placeholder="Nazwisko"
+            required
           />
           <!-- poprawić -->
           <label for="opis">Opis</label>
           <textarea
-            name=""
-            id=""
             name="description"
             id="opis"
             placeholder="Napisz coś o sobie"
           ></textarea>
           <div class="checkbox-wrap">
-            <input name="xd" type="checkbox" id="checkbox" />
-            <label for="checkbox">xd</label>
+            <input name="chce wiecej memow" type="checkbox" id="memy" />
+            <label for="memy">chce wiecej memów</label>
           </div>
           <button type="submit">Wyslij formularz</button>
         </form>

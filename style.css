@@ -17,13 +17,11 @@ header {
   color: white;
 }
 
-/* 3. Styl logo */
 .logo {
   font-size: 24px;
   font-weight: bold;
 }
 
-/* 4. Navbar - odstępy i wygląd linków */
 .navbar a {
   margin-left: 20px;
   color: white;
@@ -34,8 +32,9 @@ header {
 
 .navbar a:hover {
   text-decoration: underline;
-  color: gold; /* poprawić */
+  color: rgb(15, 192, 45);
   transform: scale(1.05);
+  text-decoration: none;
 }
 
 /* ================= sekcja hero ==========================*/
@@ -54,7 +53,9 @@ header {
 }
 
 .hero p {
-  /* poprawić */
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8); /* popracować troche nad shadow bo nie wiem jak go uzywac do konca */
+  color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 
 /* ================= sekcja o mnie ==========================*/
@@ -88,13 +89,12 @@ header {
 }
 
 .galeria {
-  /* poprawić */
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
 }
 
-.galeria1,               /* poprawić */
+.galeria1,
 .galeria2 {
   display: flex;
   gap: 20px;
@@ -102,7 +102,6 @@ header {
 }
 
 .galeria img {
-  /* poprawić */
   width: 340px;
   height: 340px;
   object-fit: cover;
@@ -112,6 +111,10 @@ header {
 
 .galeria img:hover {
   transform: scale(1.05);
+}
+.blad1 {
+  object-fit: contain !important;
+  height: auto !important;
 }
 
 /* ================= sekcja kontakt ==========================*/
@@ -144,6 +147,7 @@ button[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .checkbox-wrap {
@@ -159,13 +163,24 @@ button[type="submit"] {
 
 button {
   /* poprawić */
-  border-radius: 12px;
-  width: auto;
-  height: auto;
+  cursor: pointer;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
   background-color: green;
-  padding: 5px;
+  padding: 12px;
   margin-top: 10px;
   border: 0px;
+  transition: all 0.3s ease-in-out;
+}
+button:hover {
+  background-color: rgb(9, 99, 9);
+  transform: scale(1.05);
+}
+button[type="submit"]:hover {
+  background-color: rgb(17, 17, 17);
+  transform: scale(1.05);
 }
 /* dopisać media queries */
 /* ================= sekcja media quereies ==========================*/
