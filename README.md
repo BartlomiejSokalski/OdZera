@@ -1,4 +1,4 @@
-# Nauka Front-Endu od Zera – Moja Droga od Seniora
+# Nauka Front-Endu od Zera – Moja Droga od Zera do Seniora
 
 ## Cel repozytorium
 
