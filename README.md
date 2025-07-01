@@ -1,4 +1,4 @@
-# Nauka Front-Endu od Zera – Moja Droga do Seniora
+# Nauka Front-Endu od Zera – Moja Droga od Zera do Seniora
 
 ## Cel repozytorium
 To repozytorium powstało jako autentyczny zapis mojej drogi od zera do poziomu Senior Front-End Developera. Każdy commit, projekt i linia kodu powstają samodzielnie – bez generowania kodu przy użyciu AI. Korzystam jedynie z dokumentacji, kursów oraz narzędzi edukacyjnych wspierających naukę, a nie zastępujących samodzielnego myślenia.
