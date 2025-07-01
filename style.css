@@ -57,6 +57,11 @@ header {
   color: rgb(255, 255, 255);
   font-weight: bold;
 }
+.hero a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
 
 /* ================= sekcja o mnie ==========================*/
 .omnie {
@@ -75,11 +80,9 @@ header {
   display: none;
   margin-top: 10px;
 }
-.omnie:hover {
-  .ukryty {
-    display: block;
-    text-align: center;
-  }
+.omnie:hover .ukryty {
+  display: block;
+  text-align: center;
 }
 
 /* ================= sekcja projekty ==========================*/
@@ -92,6 +95,8 @@ header {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  margin: 0 auto;
+  width: fit-content;
 }
 
 .galeria1,
@@ -162,7 +167,6 @@ button[type="submit"] {
 }
 
 button {
-  /* poprawić */
   cursor: pointer;
   border-radius: 4px;
   color: white;
@@ -182,5 +186,101 @@ button[type="submit"]:hover {
   background-color: rgb(17, 17, 17);
   transform: scale(1.05);
 }
-/* dopisać media queries */
+
 /* ================= sekcja media quereies ==========================*/
+@media (min-width: 500px) and (max-width: 1023px) {
+  body {
+    display: flex;
+    margin: 0 auto;
+  }
+  .galeria {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: none;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  .galeria1 .galeria2 {
+    width: 400px;
+    height: 400px;
+  }
+  .blad1 {
+    object-fit: contain !important;
+
+    height: 400px !important;
+  }
+  .kontakt form {
+    width: 600px;
+    padding: 40px;
+  }
+
+  .kontakt input[type="text"],
+  .kontakt input[type="email"],
+  .kontakt textarea {
+    font-size: 18px;
+  }
+
+  .kontakt button {
+    padding: 14px 28px;
+    font-size: 18px;
+  }
+
+  footer p {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    display: flex;
+    width: 100%;
+  }
+  .galeria {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: none;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  .galeria1,
+  .galeria2 {
+    gap: 40px;
+  }
+
+  .galeria img {
+    width: 400px;
+    height: 400px;
+  }
+  .blad1 {
+    object-fit: contain !important;
+
+    height: 400px !important;
+  }
+  .kontakt form {
+    width: 600px;
+    padding: 40px;
+  }
+
+  .kontakt input[type="text"],
+  .kontakt input[type="email"],
+  .kontakt textarea {
+    font-size: 18px;
+  }
+
+  .kontakt button {
+    padding: 14px 28px;
+    font-size: 18px;
+  }
+
+  footer p {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1298px) {
+  html {
+    display: block;
+  }
+}
