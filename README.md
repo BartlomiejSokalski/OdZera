@@ -36,6 +36,11 @@ Zadania z Frontend Mentor będą traktowane jako osiągnięcia, które mogą by�
 
 To repozytorium jest aktywnie rozwijane i będzie aktualizowane w miarę przechodzenia kolejnych etapów nauki.
 
+Zapewniam, że każdego dnia poznaje nowe czeluści programowania, jeśli w jakimś dniu nie pojawią się commity,code rewiews,issues lub pull requests to znaczy, że cały dzień poświęciłem na robienie zadań lub naukę na 
+- (https://www.frontendmentor.io/)
+- (https://www.freecodecamp.org/)
+- (https://leetcode.com/)
+
 ---
 
 Jeśli chcesz zobaczyć moje postępy w czasie rzeczywistym – zapraszam na mój profil GitHub:  
