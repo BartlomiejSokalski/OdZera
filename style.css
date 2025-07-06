@@ -186,6 +186,15 @@ button[type="submit"]:hover {
   background-color: rgb(17, 17, 17);
   transform: scale(1.05);
 }
+/* ================= sekcja nauka ==========================*/
+.Nauka {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#doneList {
+  display: none;
+}
 
 /* ================= sekcja media quereies ==========================*/
 @media (min-width: 500px) and (max-width: 1023px) {
