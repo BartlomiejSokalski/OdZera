@@ -15,15 +15,23 @@
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function passwordStrength(password) {
-  if (password.length > 10 && password.match(/[!@#$%^&*]/)) {
-    return "hasło jest silne";
-  } else if (password.length > 6 && password.match(/\d/)) {
-    return "hasło jest medium";
-  } else if (password.length <= 6) {
-    return "masz weak hasło";
-  } else {
-    return undefined;
-  }
+// function passwordStrength(password) {
+//   if (password.length > 10 && password.match(/[!@#$%^&*]/)) {
+//     return "hasło jest silne";
+//   } else if (password.length > 6 && password.match(/\d/)) {
+//     return "hasło jest medium";
+//   } else if (password.length <= 6) {
+//     return "masz weak hasło";
+//   } else {
+//     return undefined;
+//   }
+// }
+// console.log(passwordStrength("Messi"));
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function repeatChar(char, times) {
+  let repeated = char.repeat(times);
+  return repeated;
 }
-console.log(passwordStrength("Messi"));
+
+console.log(repeatChar("x", 5));
