@@ -29,8 +29,10 @@
 // console.log(passwordStrength("Messi"));
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function repeatChar(char, times) {
-  let repeated = char.repeat(times);
-  return repeated;
-}
-console.log(repeatChar("x", 5));
+// function repeatChar(char, times) {
+//   let repeated = char.repeat(times);
+//   return repeated;
+// }
+// console.log(repeatChar("x", 5));
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
