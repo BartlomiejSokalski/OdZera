@@ -29,9 +29,20 @@
 // console.log(passwordStrength("Messi"));
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-function repeatChar(char, times) {
-  let repeated = char.repeat(times);
-  return repeated;
-}
+// function repeatChar(char, times) {
+//   let repeated = char.repeat(times);
+//   return repeated;
+// }
 
-console.log(repeatChar("x", 5));
+// console.log(repeatChar("x", 5));
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+let phoneNumber = "123456789";
+
+function maskPhoneNumber(phoneNumber) {
+  let length = phoneNumber.length;
+  let stars = "*".repeat(length - 4);
+  let cutNumber = phoneNumber.slice(length - 4);
+  let allTogether = stars + cutNumber;
+  return allTogether;
+}
+console.log(maskPhoneNumber(phoneNumber));
