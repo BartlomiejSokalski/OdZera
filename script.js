@@ -68,18 +68,76 @@
 
 // console.log(calculateGrade(86));
 
-function dayToActivity(day) {
-  switch (true) {
-    case day === "monday":
-      return "Praca";
-    case day === "saturday":
-      return "relaks";
-    case day === "sunday":
-      return "rodzina";
-    case day === "friday":
-      return "impreza";
-    default:
-      return "workday";
+// function dayToActivity(day) {
+//   switch (true) {
+//     case day === "monday":
+//       return "Praca";
+//     case day === "saturday":
+//       return "relaks";
+//     case day === "sunday":
+//       return "rodzina";
+//     case day === "friday":
+//       return "impreza";
+//     default:
+//       return "workday";
+//   }
+// }
+// console.log(dayToActivity("saturday"));
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+let questions = [
+  {
+    category: "school",
+    question: "What is the capital of France?",
+    choices: ["Paris", "London", "Rome"],
+    answer: "Paris",
+  },
+  {
+    category: "school",
+    question: "What is H₂O more commonly called?",
+    choices: ["Hydrogen", "Oxygen", "Water"],
+    answer: "Water",
+  },
+  {
+    category: "school",
+    question: "Who wrote the play 'Romeo and Juliet'?",
+    choices: ["William Sakespeare", "Jane Austen", "Charles Dickens"],
+    answer: "William Shakespeare",
+  },
+  {
+    category: "school",
+    question: "What is 7 × 8?",
+    choices: ["54", "56", "64"],
+    answer: "56",
+  },
+  {
+    category: "school",
+    question: "Which planet is known as the Red Planet?",
+    choices: ["Mars", "Venus", "Jupiter"],
+    answer: "Mars",
+  },
+];
+
+function getRandomQuestion(questions) {
+  let randomNumber = Math.floor(Math.random() * questions.length);
+  return questions[randomNumber];
+}
+function getRandomComputerChoice(question) {
+  const idx = Math.floor(Math.random() * question.choices.length);
+  return question.choices[idx];
+}
+
+function getResults(rQ, rA) {
+  if (rA == rQ.answer) {
+    return "The computer's choice is correct!";
+  } else {
+    return `The computer's choice is wrong. The correct answer is: ${rQ.answer}`;
   }
 }
-console.log(dayToActivity("saturday"));
+
+const question = getRandomQuestion(questions);
+const computerAnswer = getRandomComputerChoice(question);
+
+console.log(question.question);
+console.log("Computer answered:", computerAnswer);
+console.log(getResults(question, computerAnswer));
