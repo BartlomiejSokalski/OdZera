@@ -85,6 +85,10 @@
 // console.log(dayToActivity("saturday"));
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+------------------- ZDANIE DO POWTÓRKI wersja chat gpt ---------------------//
+
 let questions = [
   {
     category: "school",
@@ -141,3 +145,83 @@ const computerAnswer = getRandomComputerChoice(question);
 console.log(question.question);
 console.log("Computer answered:", computerAnswer);
 console.log(getResults(question, computerAnswer));
+
+------------- wersja coderslab ---------------------
+let questions = [
+  {
+    category:"biology",
+    question:"what is dog?",
+    choices:["cat","dog","fish"],
+    answer:"dog"
+  },
+  {
+    category:"school",
+    question:"what is 8 x 7?",
+    choices:["55","56","57"],
+    answer:"56"
+  },
+  {
+    category:"life",
+    question:"what is life?",
+    choices:["yes","no","noodles"],
+    answer:"noodles"
+  },
+  {
+    category:"food",
+    question:"what is noodles?",
+    choices:["cat","dog","noodles"],
+    answer:"noodles"
+  },
+  {
+    category:"gaming",
+    question:"what is lol?",
+    choices:["cat","dog","nightmare"],
+    answer:"nightmare"
+  },
+];
+function getRandomQuestion  (questions) {
+let randomNumber = Math.floor(Math.random() * questions.length)
+return questions[randomNumber]
+}
+
+
+function getRandomComputerChoice (choices) {
+  let randomAnswer = Math.floor(Math.random() * choices.length)
+  return choices[randomAnswer]
+}
+
+function getResults (randomQ, randomA) {
+if (randomA === randomQ.answer) {
+  return "The computer's choice is correct!"
+} else {
+  return `The computer's choice is wrong. The correct answer is: ${randomQ.answer}`
+}
+}
+
+console.log(getRandomComputerChoice(questions))
+
+console.log(getResults(questions))
+
+
+
+
+
+
+
+
+
+------------------ tego bardzo nie czaje -------------------------
+
+function getResults (randomQ, randomA) {
+if (randomA === randomQ.answer) {
+  return "The computer's choice is correct!"
+} else {
+  return `The computer's choice is wrong. The correct answer is: ${randomQ.answer}`
+}
+}
+
+-------------------- tego troche nie czaje -----------------------
+function getRandomComputerChoice (choices) {
+  let randomAnswer = Math.floor(Math.random() * choices.length)
+  return choices[randomAnswer]
+}
