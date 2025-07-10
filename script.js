@@ -331,18 +331,52 @@
 
 // console.log(playAnimalQuiz(questions));
 
-const books = [
-  { title: "Clean Code", author: "Robert C. Martin", year: 2008 },
-  { title: "The Pragmatic Programmer", author: "Andrew Hunt", year: 1999 },
-  { title: "You Don't Know JS", author: "Kyle Simpson", year: 2014 },
+// const books = [
+//   { title: "Clean Code", author: "Robert C. Martin", year: 2008 },
+//   { title: "The Pragmatic Programmer", author: "Andrew Hunt", year: 1999 },
+//   { title: "You Don't Know JS", author: "Kyle Simpson", year: 2014 },
+// ];
+
+// function getBookInfo(books, index) {
+//   let bookIndex = books[index];
+//   // let randomNumber = Math.floor(Math.random() * books.length);
+//   // let randomBook = books[randomNumber];
+//   console.log(
+//     `tytuł: ${bookIndex.title} author: ${bookIndex.author} year: ${bookIndex.year}`
+//   );
+// }
+// console.log(getBookInfo(books, 0));
+
+const orders = [
+  { id: 1, product: "Laptop", price: 3000, code: "ABC123" },
+  { id: 2, product: "Phone", price: 1500, code: "XYZ789" },
+  { id: 3, product: "Tablet", price: 2000, code: "QWE456" },
 ];
 
-function getBookInfo(books, index) {
-  let bookIndex = books[index];
-  // let randomNumber = Math.floor(Math.random() * books.length);
-  // let randomBook = books[randomNumber];
-  console.log(
-    `tytuł: ${bookIndex.title} author: ${bookIndex.author} year: ${bookIndex.year}`
-  );
+function getProduct(index) {
+  return orders[index].product;
 }
-console.log(getBookInfo(books, 0));
+
+function getCode(index) {
+  let orderIndex = orders[index].code;
+  return orderIndex;
+}
+
+function trufal(index) {
+  let check = getCode(index);
+  return Boolean(check);
+}
+
+function summ(index) {
+  let isCorrect = trufal;
+  if (isCorrect) {
+    console.log(
+      `Zamówienie ${getProduct(index)}, ${
+        orders[index].price
+      } zł - kod poprawny `
+    );
+  } else {
+    console.log("kod nie poprawny nie chce mi sie pisac tego");
+  }
+}
+console.log(summ(2));
