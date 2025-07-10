@@ -347,36 +347,82 @@
 // }
 // console.log(getBookInfo(books, 0));
 
+// const orders = [
+//   { id: 1, product: "Laptop", price: 3000, code: "ABC123" },
+//   { id: 2, product: "Phone", price: 1500, code: "XYZ789" },
+//   { id: 3, product: "Tablet", price: 2000, code: "QWE456" },
+// ];
+
+// function getProduct(index) {
+//   return orders[index].product;
+// }
+
+// function getCode(index) {
+//   let orderIndex = orders[index].code;
+//   return orderIndex;
+// }
+
+// function trufal(index) {
+//   let check = getCode(index);
+//   return Boolean(check);
+// }
+
+// function summ(index) {
+//   let isCorrect = trufal;
+//   if (isCorrect) {
+//     console.log(
+//       `Zamówienie ${getProduct(index)}, ${
+//         orders[index].price
+//       } zł - kod poprawny `
+//     );
+//   } else {
+//     console.log("kod nie poprawny nie chce mi sie pisac tego");
+//   }
+// }
+// console.log(summ(2));
+
+// uzytkownik musi podac id jesli id znajduje sie na liscie orders to zostaje zapytany o code w id jesli oba sie zgadzaja pokazuje sie zamowienie, jesli uzytkownik w odpowie zgadza sie to w console logu ma sie pojawic informacje o wysylce
 const orders = [
   { id: 1, product: "Laptop", price: 3000, code: "ABC123" },
   { id: 2, product: "Phone", price: 1500, code: "XYZ789" },
   { id: 3, product: "Tablet", price: 2000, code: "QWE456" },
 ];
 
-function getProduct(index) {
-  return orders[index].product;
-}
+// uzytkownich wchodzi na strone i jest poproszony o podanie numeru id zamówienia
 
-function getCode(index) {
-  let orderIndex = orders[index].code;
-  return orderIndex;
-}
+const idZamówienia = 2;
 
-function trufal(index) {
-  let check = getCode(index);
-  return Boolean(check);
-}
-
-function summ(index) {
-  let isCorrect = trufal;
-  if (isCorrect) {
-    console.log(
-      `Zamówienie ${getProduct(index)}, ${
-        orders[index].price
-      } zł - kod poprawny `
-    );
+const kodZamówienia = "XYZ789";
+const potwierdzenieZamówienia = true;
+function checkId(id) {
+  if (id >= 0 && id <= orders.length) {
+    return "proszę podać kod zamówienia";
   } else {
-    console.log("kod nie poprawny nie chce mi sie pisac tego");
+    return `nie mamy takiego zamówienia`;
   }
 }
-console.log(summ(2));
+console.log(checkId(idZamówienia));
+// jesli zamówienie jest w systemie użytkownik zostaje poproszony o podanie kodu do zamówienia
+
+function checkIdCode() {
+  // dołożyć propsy
+  if (orders[idZamówienia - 1].code === kodZamówienia) {
+    return orders[idZamówienia];
+  } else {
+    return `${false} zły kod`;
+  }
+}
+
+console.log(checkIdCode(kodZamówienia));
+
+// jesli kod również się zgadza użytkownik dostaje swoje zamówienie i pytanie czy ma zostać wysłane
+
+function send() {
+  // dołożyć propsy
+  if (potwierdzenieZamówienia) {
+    return "twoja paczka została wyslana";
+  } else {
+    return "czekamy na wysyłke twojej paczki";
+  }
+}
+console.log(send(potwierdzenieZamówienia));
