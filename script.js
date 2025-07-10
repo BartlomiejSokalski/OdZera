@@ -231,61 +231,101 @@
 
 // let lunches = ["apples", "bananas"];
 
-let questions = [
+// --------------------------- JESZCZE RAZ DO POWTÓRKI --------------------------------------------------------------
+
+// let questions = [
+//   {
+//     category: "school",
+//     question: "what is 10 + 9",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+//   {
+//     category: "memes",
+//     question: "what is 10 + 9",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+//   {
+//     category: "vines",
+//     question: "what is 10 + 9",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+//   {
+//     category: "funny",
+//     question: "what is 10 + 9",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+//   {
+//     category: "tiktok",
+//     question: "what is 10 + 9",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+// ];
+
+// function getRandomQuestion(array) {
+//   let randomNumber = Math.floor(Math.random() * array.length);
+//   return array[randomNumber];
+// }
+
+// function getRandomComputerChoice(choices) {
+//   let randomNumber2 = Math.floor(Math.random() * choices.length);
+//   return choices[randomNumber2];
+// }
+
+// function getResults(question, answer) {
+//   if (answer === question.answer) {
+//     return "The computer's choice is correct!";
+//   } else {
+//     return `The computer's choice is wrong. The correct answer is: ${question.answer}`;
+//   }
+// }
+// const question = getRandomQuestion(questions);
+// const computerAnswer = getRandomComputerChoice(question.choices);
+// const result = getResults(question, computerAnswer);
+
+// console.log(`Question: ${question.question}`);
+// console.log(`Choices: ${question.choices.join(", ")}`);
+// console.log(`Computer's answer: ${computerAnswer}`);
+// console.log(result);
+const questions = [
   {
-    category: "school",
-    question: "what is 10 + 9",
-    choices: ["19", "20", "21"],
-    answer: "21",
+    category: "animals",
+    question: "Which animal barks?",
+    choices: ["Dog", "Cat", "Cow"],
+    answer: "Dog",
   },
   {
-    category: "memes",
-    question: "what is 10 + 9",
-    choices: ["19", "20", "21"],
-    answer: "21",
+    category: "animals",
+    question: "Which animal meows?",
+    choices: ["Dog", "Cat", "Sheep"],
+    answer: "Cat",
   },
   {
-    category: "vines",
-    question: "what is 10 + 9",
-    choices: ["19", "20", "21"],
-    answer: "21",
-  },
-  {
-    category: "funny",
-    question: "what is 10 + 9",
-    choices: ["19", "20", "21"],
-    answer: "21",
-  },
-  {
-    category: "tiktok",
-    question: "what is 10 + 9",
-    choices: ["19", "20", "21"],
-    answer: "21",
+    category: "animals",
+    question: "Which animal moos?",
+    choices: ["Goat", "Cow", "Horse"],
+    answer: "Cow",
   },
 ];
+function playAnimalQuiz(questions) {
+  let randomNumber = Math.floor(Math.random() * questions.length);
+  let randomQuestion = questions[randomNumber];
+  let randomNumber2 = Math.floor(Math.random() * randomQuestion.choices.length);
+  let randomAnswer = randomQuestion.choices[randomNumber2];
 
-function getRandomQuestion(array) {
-  let randomNumber = Math.floor(Math.random() * array.length);
-  return array[randomNumber];
-}
-
-function getRandomComputerChoice(choices) {
-  let randomNumber2 = Math.floor(Math.random() * choices.length);
-  return choices[randomNumber2];
-}
-
-function getResults(question, answer) {
-  if (answer === question.answer) {
-    return "The computer's choice is correct!";
+  if (randomAnswer == randomQuestion.answer) {
+    console.log(`pytanie: ${randomQuestion.question}`);
+    console.log(`odpowiedź ${randomAnswer}`);
+    console.log("dobra odpowiedź");
   } else {
-    return `The computer's choice is wrong. The correct answer is: ${question.answer}`;
+    console.log(
+      `zła odpowiedź, poprawna odpowiedź to ${randomQuestion.answer}`
+    );
   }
 }
-const question = getRandomQuestion(questions);
-const computerAnswer = getRandomComputerChoice(question.choices);
-const result = getResults(question, computerAnswer);
 
-console.log(`Question: ${question.question}`);
-console.log(`Choices: ${question.choices.join(", ")}`);
-console.log(`Computer's answer: ${computerAnswer}`);
-console.log(result);
+console.log(playAnimalQuiz(questions));
