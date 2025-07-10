@@ -85,143 +85,207 @@
 // console.log(dayToActivity("saturday"));
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+// ------------------- ZDANIE DO POWTÓRKI wersja chat gpt ---------------------//
 
+// let questions = [
+//   {
+//     category: "school",
+//     question: "What is the capital of France?",
+//     choices: ["Paris", "London", "Rome"],
+//     answer: "Paris",
+//   },
+//   {
+//     category: "school",
+//     question: "What is H₂O more commonly called?",
+//     choices: ["Hydrogen", "Oxygen", "Water"],
+//     answer: "Water",
+//   },
+//   {
+//     category: "school",
+//     question: "Who wrote the play 'Romeo and Juliet'?",
+//     choices: ["William Sakespeare", "Jane Austen", "Charles Dickens"],
+//     answer: "William Shakespeare",
+//   },
+//   {
+//     category: "school",
+//     question: "What is 7 × 8?",
+//     choices: ["54", "56", "64"],
+//     answer: "56",
+//   },
+//   {
+//     category: "school",
+//     question: "Which planet is known as the Red Planet?",
+//     choices: ["Mars", "Venus", "Jupiter"],
+//     answer: "Mars",
+//   },
+// ];
 
-------------------- ZDANIE DO POWTÓRKI wersja chat gpt ---------------------//
+// function getRandomQuestion(questions) {
+//   let randomNumber = Math.floor(Math.random() * questions.length);
+//   return questions[randomNumber];
+// }
+// function getRandomComputerChoice(question) {
+//   const idx = Math.floor(Math.random() * question.choices.length);
+//   return question.choices[idx];
+// }
+
+// function getResults(rQ, rA) {
+//   if (rA == rQ.answer) {
+//     return "The computer's choice is correct!";
+//   } else {
+//     return `The computer's choice is wrong. The correct answer is: ${rQ.answer}`;
+//   }
+// }
+
+// const question = getRandomQuestion(questions);
+// const computerAnswer = getRandomComputerChoice(question);
+
+// console.log(question.question);
+// console.log("Computer answered:", computerAnswer);
+// console.log(getResults(question, computerAnswer));
+
+// ------------- wersja coderslab ---------------------
+// let questions = [
+//   {
+//     category:"biology",
+//     question:"what is dog?",
+//     choices:["cat","dog","fish"],
+//     answer:"dog"
+//   },
+//   {
+//     category:"school",
+//     question:"what is 8 x 7?",
+//     choices:["55","56","57"],
+//     answer:"56"
+//   },
+//   {
+//     category:"life",
+//     question:"what is life?",
+//     choices:["yes","no","noodles"],
+//     answer:"noodles"
+//   },
+//   {
+//     category:"food",
+//     question:"what is noodles?",
+//     choices:["cat","dog","noodles"],
+//     answer:"noodles"
+//   },
+//   {
+//     category:"gaming",
+//     question:"what is lol?",
+//     choices:["cat","dog","nightmare"],
+//     answer:"nightmare"
+//   },
+// ];
+// function getRandomQuestion  (questions) {
+// let randomNumber = Math.floor(Math.random() * questions.length)
+// return questions[randomNumber]
+// }
+
+// function getRandomComputerChoice (choices) {
+//   let randomAnswer = Math.floor(Math.random() * choices.length)
+//   return choices[randomAnswer]
+// }
+
+// function getResults (randomQ, randomA) {
+// if (randomA === randomQ.answer) {
+//   return "The computer's choice is correct!"
+// } else {
+//   return `The computer's choice is wrong. The correct answer is: ${randomQ.answer}`
+// }
+// }
+
+// console.log(getRandomComputerChoice(questions))
+
+// console.log(getResults(questions))
+
+// ------------------ tego bardzo nie czaje -------------------------
+
+// function getResults (randomQ, randomA) {
+// if (randomA === randomQ.answer) {
+//   return "The computer's choice is correct!"
+// } else {
+//   return `The computer's choice is wrong. The correct answer is: ${randomQ.answer}`
+// }
+// }
+
+// -------------------- tego troche nie czaje -----------------------
+// function getRandomComputerChoice (choices) {
+//   let randomAnswer = Math.floor(Math.random() * choices.length)
+//   return choices[randomAnswer]
+// }
+
+// function getVowelCount(sentence) {
+
+//   const vowels = "aeiouAEIOU";
+//   let count = 0;
+
+//   for (let ch of sentence) {
+//     if (vowels.includes(ch)) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// let lunches = ["apples", "bananas"];
 
 let questions = [
   {
     category: "school",
-    question: "What is the capital of France?",
-    choices: ["Paris", "London", "Rome"],
-    answer: "Paris",
+    question: "what is 10 + 9",
+    choices: ["19", "20", "21"],
+    answer: "21",
   },
   {
-    category: "school",
-    question: "What is H₂O more commonly called?",
-    choices: ["Hydrogen", "Oxygen", "Water"],
-    answer: "Water",
+    category: "memes",
+    question: "what is 10 + 9",
+    choices: ["19", "20", "21"],
+    answer: "21",
   },
   {
-    category: "school",
-    question: "Who wrote the play 'Romeo and Juliet'?",
-    choices: ["William Sakespeare", "Jane Austen", "Charles Dickens"],
-    answer: "William Shakespeare",
+    category: "vines",
+    question: "what is 10 + 9",
+    choices: ["19", "20", "21"],
+    answer: "21",
   },
   {
-    category: "school",
-    question: "What is 7 × 8?",
-    choices: ["54", "56", "64"],
-    answer: "56",
+    category: "funny",
+    question: "what is 10 + 9",
+    choices: ["19", "20", "21"],
+    answer: "21",
   },
   {
-    category: "school",
-    question: "Which planet is known as the Red Planet?",
-    choices: ["Mars", "Venus", "Jupiter"],
-    answer: "Mars",
+    category: "tiktok",
+    question: "what is 10 + 9",
+    choices: ["19", "20", "21"],
+    answer: "21",
   },
 ];
 
-function getRandomQuestion(questions) {
-  let randomNumber = Math.floor(Math.random() * questions.length);
-  return questions[randomNumber];
-}
-function getRandomComputerChoice(question) {
-  const idx = Math.floor(Math.random() * question.choices.length);
-  return question.choices[idx];
+function getRandomQuestion(array) {
+  let randomNumber = Math.floor(Math.random() * array.length);
+  return array[randomNumber];
 }
 
-function getResults(rQ, rA) {
-  if (rA == rQ.answer) {
+function getRandomComputerChoice(choices) {
+  let randomNumber2 = Math.floor(Math.random() * choices.length);
+  return choices[randomNumber2];
+}
+
+function getResults(question, answer) {
+  if (answer === question.answer) {
     return "The computer's choice is correct!";
   } else {
-    return `The computer's choice is wrong. The correct answer is: ${rQ.answer}`;
+    return `The computer's choice is wrong. The correct answer is: ${question.answer}`;
   }
 }
-
 const question = getRandomQuestion(questions);
-const computerAnswer = getRandomComputerChoice(question);
+const computerAnswer = getRandomComputerChoice(question.choices);
+const result = getResults(question, computerAnswer);
 
-console.log(question.question);
-console.log("Computer answered:", computerAnswer);
-console.log(getResults(question, computerAnswer));
-
-------------- wersja coderslab ---------------------
-let questions = [
-  {
-    category:"biology",
-    question:"what is dog?",
-    choices:["cat","dog","fish"],
-    answer:"dog"
-  },
-  {
-    category:"school",
-    question:"what is 8 x 7?",
-    choices:["55","56","57"],
-    answer:"56"
-  },
-  {
-    category:"life",
-    question:"what is life?",
-    choices:["yes","no","noodles"],
-    answer:"noodles"
-  },
-  {
-    category:"food",
-    question:"what is noodles?",
-    choices:["cat","dog","noodles"],
-    answer:"noodles"
-  },
-  {
-    category:"gaming",
-    question:"what is lol?",
-    choices:["cat","dog","nightmare"],
-    answer:"nightmare"
-  },
-];
-function getRandomQuestion  (questions) {
-let randomNumber = Math.floor(Math.random() * questions.length)
-return questions[randomNumber]
-}
-
-
-function getRandomComputerChoice (choices) {
-  let randomAnswer = Math.floor(Math.random() * choices.length)
-  return choices[randomAnswer]
-}
-
-function getResults (randomQ, randomA) {
-if (randomA === randomQ.answer) {
-  return "The computer's choice is correct!"
-} else {
-  return `The computer's choice is wrong. The correct answer is: ${randomQ.answer}`
-}
-}
-
-console.log(getRandomComputerChoice(questions))
-
-console.log(getResults(questions))
-
-
-
-
-
-
-
-
-
------------------- tego bardzo nie czaje -------------------------
-
-function getResults (randomQ, randomA) {
-if (randomA === randomQ.answer) {
-  return "The computer's choice is correct!"
-} else {
-  return `The computer's choice is wrong. The correct answer is: ${randomQ.answer}`
-}
-}
-
--------------------- tego troche nie czaje -----------------------
-function getRandomComputerChoice (choices) {
-  let randomAnswer = Math.floor(Math.random() * choices.length)
-  return choices[randomAnswer]
-}
+console.log(`Question: ${question.question}`);
+console.log(`Choices: ${question.choices.join(", ")}`);
+console.log(`Computer's answer: ${computerAnswer}`);
+console.log(result);
