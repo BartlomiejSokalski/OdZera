@@ -291,41 +291,58 @@
 // console.log(`Choices: ${question.choices.join(", ")}`);
 // console.log(`Computer's answer: ${computerAnswer}`);
 // console.log(result);
-const questions = [
-  {
-    category: "animals",
-    question: "Which animal barks?",
-    choices: ["Dog", "Cat", "Cow"],
-    answer: "Dog",
-  },
-  {
-    category: "animals",
-    question: "Which animal meows?",
-    choices: ["Dog", "Cat", "Sheep"],
-    answer: "Cat",
-  },
-  {
-    category: "animals",
-    question: "Which animal moos?",
-    choices: ["Goat", "Cow", "Horse"],
-    answer: "Cow",
-  },
+
+// const questions = [
+//   {
+//     category: "animals",
+//     question: "Which animal barks?",
+//     choices: ["Dog", "Cat", "Cow"],
+//     answer: "Dog",
+//   },
+//   {
+//     category: "animals",
+//     question: "Which animal meows?",
+//     choices: ["Dog", "Cat", "Sheep"],
+//     answer: "Cat",
+//   },
+//   {
+//     category: "animals",
+//     question: "Which animal moos?",
+//     choices: ["Goat", "Cow", "Horse"],
+//     answer: "Cow",
+//   },
+// ];
+// function playAnimalQuiz(questions) {
+//   let randomNumber = Math.floor(Math.random() * questions.length);
+//   let randomQuestion = questions[randomNumber];
+//   let randomNumber2 = Math.floor(Math.random() * randomQuestion.choices.length);
+//   let randomAnswer = randomQuestion.choices[randomNumber2];
+
+//   if (randomAnswer == randomQuestion.answer) {
+//     console.log(`pytanie: ${randomQuestion.question}`);
+//     console.log(`odpowiedź ${randomAnswer}`);
+//     console.log("dobra odpowiedź");
+//   } else {
+//     console.log(
+//       `zła odpowiedź, poprawna odpowiedź to ${randomQuestion.answer}`
+//     );
+//   }
+// }
+
+// console.log(playAnimalQuiz(questions));
+
+const books = [
+  { title: "Clean Code", author: "Robert C. Martin", year: 2008 },
+  { title: "The Pragmatic Programmer", author: "Andrew Hunt", year: 1999 },
+  { title: "You Don't Know JS", author: "Kyle Simpson", year: 2014 },
 ];
-function playAnimalQuiz(questions) {
-  let randomNumber = Math.floor(Math.random() * questions.length);
-  let randomQuestion = questions[randomNumber];
-  let randomNumber2 = Math.floor(Math.random() * randomQuestion.choices.length);
-  let randomAnswer = randomQuestion.choices[randomNumber2];
 
-  if (randomAnswer == randomQuestion.answer) {
-    console.log(`pytanie: ${randomQuestion.question}`);
-    console.log(`odpowiedź ${randomAnswer}`);
-    console.log("dobra odpowiedź");
-  } else {
-    console.log(
-      `zła odpowiedź, poprawna odpowiedź to ${randomQuestion.answer}`
-    );
-  }
+function getBookInfo(books, index) {
+  let bookIndex = books[index];
+  // let randomNumber = Math.floor(Math.random() * books.length);
+  // let randomBook = books[randomNumber];
+  console.log(
+    `tytuł: ${bookIndex.title} author: ${bookIndex.author} year: ${bookIndex.year}`
+  );
 }
-
-console.log(playAnimalQuiz(questions));
+console.log(getBookInfo(books, 0));
