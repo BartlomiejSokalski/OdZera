@@ -381,103 +381,101 @@
 // }
 // console.log(summ(2));
 
-// uzytkownik musi podac id jesli id znajduje sie na liscie orders to zostaje zapytany o code w id jesli oba sie zgadzaja pokazuje sie zamowienie, jesli uzytkownik w odpowie zgadza sie to w console logu ma sie pojawic informacje o wysylce
-// const orders = [
-//   { id: 1, product: "Laptop", price: 3000, code: "ABC123" },
-//   { id: 2, product: "Phone", price: 1500, code: "XYZ789" },
-//   { id: 3, product: "Tablet", price: 2000, code: "QWE456" },
+// let questions = [
+//   {
+//     category: "school",
+//     question: "what's 9 + 10",
+//     choices: ["21", "20", "19"],
+//     answer: "21",
+//   },
+//   {
+//     category: "memes",
+//     question: "what's 9 + 10",
+//     choices: ["21", "20", "19"],
+//     answer: "21",
+//   },
+//   {
+//     category: "tiktok",
+//     question: "what's 9 + 10",
+//     choices: ["21", "20", "19"],
+//     answer: "21",
+//   },
+//   {
+//     category: "funny",
+//     question: "what's 9 + 10",
+//     choices: ["21", "20", "19"],
+//     answer: "21",
+//   },
+//   {
+//     category: "vines",
+//     question: "what's 9 + 10",
+//     choices: ["21", "20", "19"],
+//     answer: "21",
+//   },
 // ];
-
-// // uzytkownich wchodzi na strone i jest poproszony o podanie numeru id zamówienia
-
-// const idZamówienia = 2;
-
-// const kodZamówienia = "XYZ789";
-// const potwierdzenieZamówienia = true;
-// function checkId(id) {
-//   if (id >= 0 && id <= orders.length) {
-//     return "proszę podać kod zamówienia";
-//   } else {
-//     return `nie mamy takiego zamówienia`;
-//   }
+// function getRandomQuestion(questions) {
+//   let randomQuestion = Math.floor(Math.random() * questions.length);
+//   return questions[randomQuestion];
 // }
-// console.log(checkId(idZamówienia));
-// // jesli zamówienie jest w systemie użytkownik zostaje poproszony o podanie kodu do zamówienia
+// const randomQuestion = getRandomQuestion(questions);
 
-// function checkIdCode() {
-//   // dołożyć propsy
-//   if (orders[idZamówienia - 1].code === kodZamówienia) {
-//     return orders[idZamówienia];
+// function getRandomComputerChoice(choices) {
+//   let randomAnswer = Math.floor(Math.random() * choices.length);
+//   return choices[randomAnswer];
+// }
+// const randomAnswer = getRandomComputerChoice(randomQuestion.choices);
+
+// function getResults(question, answer) {
+//   if (answer == question.answer) {
+//     return "The computer's choice is correct!";
 //   } else {
-//     return `${false} zły kod`;
+//     return `The computer's choice is wrong. The correct answer is: ${question.answer}`;
 //   }
 // }
 
-// console.log(checkIdCode(kodZamówienia));
+// console.log(randomQuestion);
+// console.log(randomAnswer);
+// console.log(getResults(randomQuestion, randomAnswer));
 
-// // jesli kod również się zgadza użytkownik dostaje swoje zamówienie i pytanie czy ma zostać wysłane
-
-// function send() {
-//   // dołożyć propsy
-//   if (potwierdzenieZamówienia) {
-//     return "twoja paczka została wyslana";
-//   } else {
-//     return "czekamy na wysyłke twojej paczki";
-//   }
-// }
-// console.log(send(potwierdzenieZamówienia));
-let questions = [
-  {
-    category: "school",
-    question: "what's 9 + 10",
-    choices: ["21", "20", "19"],
-    answer: "21",
-  },
-  {
-    category: "memes",
-    question: "what's 9 + 10",
-    choices: ["21", "20", "19"],
-    answer: "21",
-  },
-  {
-    category: "tiktok",
-    question: "what's 9 + 10",
-    choices: ["21", "20", "19"],
-    answer: "21",
-  },
-  {
-    category: "funny",
-    question: "what's 9 + 10",
-    choices: ["21", "20", "19"],
-    answer: "21",
-  },
-  {
-    category: "vines",
-    question: "what's 9 + 10",
-    choices: ["21", "20", "19"],
-    answer: "21",
-  },
+// uzytkownik musi podac id jesli id znajduje sie na liscie orders to zostaje zapytany o code w id jesli oba sie zgadzaja pokazuje sie zamowienie, jesli uzytkownik w odpowie zgadza sie to w console logu ma sie pojawic informacje o wysylce
+const orders = [
+  { id: 1, product: "Laptop", price: 3000, code: "ABC123" },
+  { id: 2, product: "Phone", price: 1500, code: "XYZ789" },
+  { id: 3, product: "Tablet", price: 2000, code: "QWE456" },
 ];
-function getRandomQuestion(questions) {
-  let randomQuestion = Math.floor(Math.random() * questions.length);
-  return questions[randomQuestion];
-}
-const randomQuestion = getRandomQuestion(questions);
-
-function getRandomComputerChoice(choices) {
-  let randomAnswer = Math.floor(Math.random() * choices.length);
-  return choices[randomAnswer];
-}
-const randomAnswer = getRandomComputerChoice(randomQuestion.choices);
-
-function getResults(question, answer) {
-  if (answer == question.answer) {
-    return "The computer's choice is correct!";
+const userGiveId = 3;
+const userGiveCode = "QWE456";
+// uzytkownich wchodzi na strone i jest poproszony o podanie numeru id zamówienia
+function checkId(orders) {
+  if (
+    (userGiveId <= orders.length && userGiveId > 0) ||
+    (userGiveId >= orders.length && userGiveId <= 3)
+  ) {
+    console.log("podaj kod zamówienia");
+    return true;
   } else {
-    return `The computer's choice is wrong. The correct answer is: ${question.answer}`;
+    console.log("nie mamy twojego zamówienia");
+    return false;
   }
 }
+console.log(checkId(orders));
 
-console.log(randomQuestion);
-console.log(randomAnswer);
-console.log(getResults(randomQuestion, randomAnswer));
+// jesli zamówienie jest w systemie użytkownik zostaje poproszony o podanie kodu do zamówienia
+function checkCode(orders) {
+  let check =
+    userGiveCode === orders[userGiveId - 1].code
+      ? `poprawny kod. Oto zamówienie ${JSON.stringify(orders[userGiveId - 1])}`
+      : "błędny kod";
+  return check;
+}
+console.log(checkCode(orders));
+
+// jesli kod również się zgadza użytkownik dostaje swoje zamówienie i pytanie czy ma zostać wysłane
+function send(yes) {
+  yes == "yes"
+    ? console.log("zamowienie wysłane")
+    : console.log("czekamy na wysyłke");
+}
+console.log(send("yes"));
+
+// dołożyć propsy
