@@ -478,95 +478,96 @@
 // }
 // console.log(send("yes"));
 
-const greetings = [
-  { id: 1, text: "Cześć", language: "pl" },
-  { id: 2, text: "Hello", language: "en" },
-  { id: 3, text: "Hola", language: "es" },
-  { id: 4, text: "Bonjour", language: "fr" },
-  { id: 5, text: "Hallo", language: "de" },
-];
+// const greetings = [
+//   { id: 1, text: "Cześć", language: "pl" },
+//   { id: 2, text: "Hello", language: "en" },
+//   { id: 3, text: "Hola", language: "es" },
+//   { id: 4, text: "Bonjour", language: "fr" },
+//   { id: 5, text: "Hallo", language: "de" },
+// ];
 
-const users = [
-  { id: 1, name: "Asia", isMember: true, code: "ASIA123" },
-  { id: 2, name: "Bartek", isMember: false, code: "BARTEK456" },
-  { id: 3, name: "Kasia", isMember: true, code: "KASIA789" },
-  { id: 4, name: "Michał", isMember: false, code: "MICHAŁ012" },
-];
+// const users = [
+//   { id: 1, name: "Asia", isMember: true, code: "ASIA123" },
+//   { id: 2, name: "Bartek", isMember: false, code: "BARTEK456" },
+//   { id: 3, name: "Kasia", isMember: true, code: "KASIA789" },
+//   { id: 4, name: "Michał", isMember: false, code: "MICHAŁ012" },
+// ];
 
-const orders = [
-  {
-    id: 1,
-    userId: 1,
-    product: "Laptop",
-    price: 3000,
-    shippingCost: 50,
-    shipmentDate: "",
-    shipmentTime: "",
-  },
-  {
-    id: 2,
-    userId: 2,
-    product: "Phone",
-    price: 1500,
-    shippingCost: 30,
-    shipmentDate: "",
-    shipmentTime: "14:30",
-  },
-  {
-    id: 3,
-    userId: 3,
-    product: "Tablet",
-    price: 2000,
-    shippingCost: 40,
-    shipmentDate: "16/07/2025",
-    shipmentTime: "14:30",
-  },
-  {
-    id: 4,
-    userId: 4,
-    product: "Headphones",
-    price: 500,
-    shippingCost: 20,
-    shipmentDate: "",
-    shipmentTime: "",
-  },
-];
+// const orders = [
+//   {
+//     id: 1,
+//     userId: 1,
+//     product: "Laptop",
+//     price: 3000,
+//     shippingCost: 50,
+//     shipmentDate: "16/07/2025",
+//     shipmentTime: "14:30",
+//   },
+//   {
+//     id: 2,
+//     userId: 2,
+//     product: "Phone",
+//     price: 1500,
+//     shippingCost: 30,
+//     shipmentDate: "",
+//     shipmentTime: "14:30",
+//   },
+//   {
+//     id: 3,
+//     userId: 3,
+//     product: "Tablet",
+//     price: 2000,
+//     shippingCost: 40,
+//     shipmentDate: "16/07/2025",
+//     shipmentTime: "14:30",
+//   },
+//   {
+//     id: 4,
+//     userId: 4,
+//     product: "Headphones",
+//     price: 500,
+//     shippingCost: 20,
+//     shipmentDate: "",
+//     shipmentTime: "",
+//   },
+// ];
 
-const orderId = orders[2].id;
-const userCode = "BARTEK456";
-const typicalUser = users[1];
-let valid;
-// po wejsciu na strone user zostaje przywitany grettings losowo wybranym
-function checkMyOrderStatus() {
-  function greetUser(array) {
-    let randomGretting = Math.floor(Math.random() * array.length);
-    return `${array[randomGretting].text}, ${typicalUser.name}!`;
-  }
-  function getIdAndCode(id, code) {
-    id === 3 && code === "BARTEK456" ? (valid = true) : (valid = false);
-    return valid === true ? "poprawny kod" : "error";
-  }
+// const orderId = orders[2].id;
+// const userCode = "KASIA789";
+// const typicalUser = users[2];
+// let valid;
+// // po wejsciu na strone user zostaje przywitany grettings losowo wybranym
+// function checkMyOrderStatus() {
+//   function greetUser(array) {
+//     let randomGretting = Math.floor(Math.random() * array.length);
+//     return `${array[randomGretting].text}, ${typicalUser.name}!`;
+//   }
+//   function getIdAndCode(id, code) {
+//     id == 3 && code == "KASIA789" ? (valid = true) : (valid = false);
+//     return valid === true ? "poprawny kod" : "error";
+//   }
 
-  function checkIfSend(array) {
-    const order = array[1];
-    return valid === true
-      ? order.shipmentDate === ""
-        ? `Prosze zapłącić za wysyłke ${order.shippingCost}$`
-        : `Paczka dostarczona: ${order.shipmentDate}, o godzinie ${order.shipmentTime}`
-      : "błędny kod";
-  }
+//   function checkIfSend(array) {
+//     const order = array[0];
+//     return valid === true
+//       ? order.shipmentDate === ""
+//         ? `Prosze zapłącić za wysyłke ${order.shippingCost}$`
+//         : `Paczka dostarczona: ${order.shipmentDate}, o godzinie ${order.shipmentTime}`
+//       : "błędny kod";
+//   }
 
-  function allTogether(array1, array2, id, code) {
-    let everything = `${greetUser(array1)} ${getIdAndCode(
-      id,
-      code
-    )} ${checkIfSend(array2)}`;
-    return everything;
-  }
-  return allTogether(greetings, orders, orderId, userCode);
-}
+//   function allTogether(array1, array2, id, code) {
+//     let everything = `${greetUser(array1)} ${getIdAndCode(
+//       id,
+//       code
+//     )} ${checkIfSend(array2)}`;
 
-console.log(checkMyOrderStatus());
+//     return everything;
+//   }
+//   return allTogether(greetings, orders, orderId, userCode);
+// }
+
+// console.log(checkMyOrderStatus());
 
 // nastepnie uzytkownik jest proszony o podanie numeru id oraz personalnego kodu przypisanego do uzytkownika kazdy uzytkownik ma swoj kod
 
@@ -575,3 +576,17 @@ console.log(checkMyOrderStatus());
 // jesli zamowienie nie jest wyslane uzytkownik jest proszony o zaplacenie za wysylke kwota ma byc przypisana do sprzetu który zamowil
 
 // wszystkie funckje muszą byc zamkniete wewnatrz funkcji ktora nazywa się checkMyOrderStatus,
+
+function getWordCount(sentence) {
+  sentence = sentence.trim();
+  let space = " ";
+  let count = 0;
+  for (const words of sentence) {
+    if (words.includes(space)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(getWordCount("When are you gonna start learning to code?"));
