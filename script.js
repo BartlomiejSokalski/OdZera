@@ -438,44 +438,140 @@
 // console.log(getResults(randomQuestion, randomAnswer));
 
 // uzytkownik musi podac id jesli id znajduje sie na liscie orders to zostaje zapytany o code w id jesli oba sie zgadzaja pokazuje sie zamowienie, jesli uzytkownik w odpowie zgadza sie to w console logu ma sie pojawic informacje o wysylce
-const orders = [
-  { id: 1, product: "Laptop", price: 3000, code: "ABC123" },
-  { id: 2, product: "Phone", price: 1500, code: "XYZ789" },
-  { id: 3, product: "Tablet", price: 2000, code: "QWE456" },
+// const orders = [
+//   { id: 1, product: "Laptop", price: 3000, code: "ABC123" },
+//   { id: 2, product: "Phone", price: 1500, code: "XYZ789" },
+//   { id: 3, product: "Tablet", price: 2000, code: "QWE456" },
+// ];
+// const userGiveId = 3;
+// const userGiveCode = "QWE456";
+// // uzytkownich wchodzi na strone i jest poproszony o podanie numeru id zamówienia
+// function checkId(orders) {
+//   if (
+//     (userGiveId <= orders.length && userGiveId > 0) ||
+//     (userGiveId >= orders.length && userGiveId <= 3)
+//   ) {
+//     console.log("podaj kod zamówienia");
+//     return true;
+//   } else {
+//     console.log("nie mamy twojego zamówienia");
+//     return false;
+//   }
+// }
+// console.log(checkId(orders));
+
+// // jesli zamówienie jest w systemie użytkownik zostaje poproszony o podanie kodu do zamówienia
+// function checkCode(orders) {
+//   let check =
+//     userGiveCode === orders[userGiveId - 1].code
+//       ? `poprawny kod. Oto zamówienie ${JSON.stringify(orders[userGiveId - 1])}`
+//       : "błędny kod";
+//   return check;
+// }
+// console.log(checkCode(orders));
+
+// // jesli kod również się zgadza użytkownik dostaje swoje zamówienie i pytanie czy ma zostać wysłane
+// function send(yes) {
+//   yes == "yes"
+//     ? console.log("zamowienie wysłane")
+//     : console.log("czekamy na wysyłke");
+// }
+// console.log(send("yes"));
+
+const greetings = [
+  { id: 1, text: "Cześć", language: "pl" },
+  { id: 2, text: "Hello", language: "en" },
+  { id: 3, text: "Hola", language: "es" },
+  { id: 4, text: "Bonjour", language: "fr" },
+  { id: 5, text: "Hallo", language: "de" },
 ];
-const userGiveId = 3;
-const userGiveCode = "QWE456";
-// uzytkownich wchodzi na strone i jest poproszony o podanie numeru id zamówienia
-function checkId(orders) {
-  if (
-    (userGiveId <= orders.length && userGiveId > 0) ||
-    (userGiveId >= orders.length && userGiveId <= 3)
-  ) {
-    console.log("podaj kod zamówienia");
-    return true;
-  } else {
-    console.log("nie mamy twojego zamówienia");
-    return false;
+
+const users = [
+  { id: 1, name: "Asia", isMember: true, code: "ASIA123" },
+  { id: 2, name: "Bartek", isMember: false, code: "BARTEK456" },
+  { id: 3, name: "Kasia", isMember: true, code: "KASIA789" },
+  { id: 4, name: "Michał", isMember: false, code: "MICHAŁ012" },
+];
+
+const orders = [
+  {
+    id: 1,
+    userId: 1,
+    product: "Laptop",
+    price: 3000,
+    shippingCost: 50,
+    shipmentDate: "",
+    shipmentTime: "",
+  },
+  {
+    id: 2,
+    userId: 2,
+    product: "Phone",
+    price: 1500,
+    shippingCost: 30,
+    shipmentDate: "",
+    shipmentTime: "14:30",
+  },
+  {
+    id: 3,
+    userId: 3,
+    product: "Tablet",
+    price: 2000,
+    shippingCost: 40,
+    shipmentDate: "16/07/2025",
+    shipmentTime: "14:30",
+  },
+  {
+    id: 4,
+    userId: 4,
+    product: "Headphones",
+    price: 500,
+    shippingCost: 20,
+    shipmentDate: "",
+    shipmentTime: "",
+  },
+];
+
+const orderId = orders[2].id;
+const userCode = "BARTEK456";
+const typicalUser = users[1];
+let valid;
+// po wejsciu na strone user zostaje przywitany grettings losowo wybranym
+function checkMyOrderStatus() {
+  function greetUser(array) {
+    let randomGretting = Math.floor(Math.random() * array.length);
+    return `${array[randomGretting].text}, ${typicalUser.name}!`;
   }
-}
-console.log(checkId(orders));
+  function getIdAndCode(id, code) {
+    id === 3 && code === "BARTEK456" ? (valid = true) : (valid = false);
+    return valid === true ? "poprawny kod" : "error";
+  }
 
-// jesli zamówienie jest w systemie użytkownik zostaje poproszony o podanie kodu do zamówienia
-function checkCode(orders) {
-  let check =
-    userGiveCode === orders[userGiveId - 1].code
-      ? `poprawny kod. Oto zamówienie ${JSON.stringify(orders[userGiveId - 1])}`
+  function checkIfSend(array) {
+    const order = array[1];
+    return valid === true
+      ? order.shipmentDate === ""
+        ? `Prosze zapłącić za wysyłke ${order.shippingCost}$`
+        : `Paczka dostarczona: ${order.shipmentDate}, o godzinie ${order.shipmentTime}`
       : "błędny kod";
-  return check;
-}
-console.log(checkCode(orders));
+  }
 
-// jesli kod również się zgadza użytkownik dostaje swoje zamówienie i pytanie czy ma zostać wysłane
-function send(yes) {
-  yes == "yes"
-    ? console.log("zamowienie wysłane")
-    : console.log("czekamy na wysyłke");
+  function allTogether(array1, array2, id, code) {
+    let everything = `${greetUser(array1)} ${getIdAndCode(
+      id,
+      code
+    )} ${checkIfSend(array2)}`;
+    return everything;
+  }
+  return allTogether(greetings, orders, orderId, userCode);
 }
-console.log(send("yes"));
 
-// dołożyć propsy
+console.log(checkMyOrderStatus());
+
+// nastepnie uzytkownik jest proszony o podanie numeru id oraz personalnego kodu przypisanego do uzytkownika kazdy uzytkownik ma swoj kod
+
+// jesli zamowienie jest wyslane czyli znajduje sie tam pusty string dostaje informacje kiedy zostało wyslane i kiedy będzie dostawa dane z data wysylki i proponowana data dostawy maja wyswietlac sie uzytkownikowi w postaci tablicy w formacie dd/mm/rrrr, hh/mm
+
+// jesli zamowienie nie jest wyslane uzytkownik jest proszony o zaplacenie za wysylke kwota ma byc przypisana do sprzetu który zamowil
+
+// wszystkie funckje muszą byc zamkniete wewnatrz funkcji ktora nazywa się checkMyOrderStatus,
