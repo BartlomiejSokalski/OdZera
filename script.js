@@ -381,62 +381,6 @@
 // }
 // console.log(summ(2));
 
-// let questions = [
-//   {
-//     category: "school",
-//     question: "what's 9 + 10",
-//     choices: ["21", "20", "19"],
-//     answer: "21",
-//   },
-//   {
-//     category: "memes",
-//     question: "what's 9 + 10",
-//     choices: ["21", "20", "19"],
-//     answer: "21",
-//   },
-//   {
-//     category: "tiktok",
-//     question: "what's 9 + 10",
-//     choices: ["21", "20", "19"],
-//     answer: "21",
-//   },
-//   {
-//     category: "funny",
-//     question: "what's 9 + 10",
-//     choices: ["21", "20", "19"],
-//     answer: "21",
-//   },
-//   {
-//     category: "vines",
-//     question: "what's 9 + 10",
-//     choices: ["21", "20", "19"],
-//     answer: "21",
-//   },
-// ];
-// function getRandomQuestion(questions) {
-//   let randomQuestion = Math.floor(Math.random() * questions.length);
-//   return questions[randomQuestion];
-// }
-// const randomQuestion = getRandomQuestion(questions);
-
-// function getRandomComputerChoice(choices) {
-//   let randomAnswer = Math.floor(Math.random() * choices.length);
-//   return choices[randomAnswer];
-// }
-// const randomAnswer = getRandomComputerChoice(randomQuestion.choices);
-
-// function getResults(question, answer) {
-//   if (answer == question.answer) {
-//     return "The computer's choice is correct!";
-//   } else {
-//     return `The computer's choice is wrong. The correct answer is: ${question.answer}`;
-//   }
-// }
-
-// console.log(randomQuestion);
-// console.log(randomAnswer);
-// console.log(getResults(randomQuestion, randomAnswer));
-
 // uzytkownik musi podac id jesli id znajduje sie na liscie orders to zostaje zapytany o code w id jesli oba sie zgadzaja pokazuje sie zamowienie, jesli uzytkownik w odpowie zgadza sie to w console logu ma sie pojawic informacje o wysylce
 // const orders = [
 //   { id: 1, product: "Laptop", price: 3000, code: "ABC123" },
@@ -577,16 +521,133 @@
 
 // wszystkie funckje muszą byc zamkniete wewnatrz funkcji ktora nazywa się checkMyOrderStatus,
 
-function getWordCount(sentence) {
-  sentence = sentence.trim();
-  let space = " ";
-  let count = 0;
-  for (const words of sentence) {
-    if (words.includes(space)) {
-      count++;
-    }
-  }
-  return count;
-}
+// let questions = [
+//   {
+//     category: "school",
+//     question: "what's 9 + 10?",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+//   {
+//     category: "memes",
+//     question: "what's 9 + 10?",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+//   {
+//     category: "funny",
+//     question: "what's 9 + 10?",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+//   {
+//     category: "vines",
+//     question: "what's 9 + 10?",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+//   {
+//     category: "tiktok",
+//     question: "what's 9 + 10?",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+// ];
+// function getRandomQuestion(array) {
+//   let randomNumber = Math.floor(Math.random() * array.length);
+//   return array[randomNumber];
+// }
+// const randomQuestion = getRandomQuestion(questions); // === {category: "tiktok",    question: "what's 9 + 10?",    choices: ["19", "20", "21"],    answer: "21",  },
 
-console.log(getWordCount("When are you gonna start learning to code?"));
+// function getRandomComputerChoice(choices) {
+//   let randomNumber = Math.floor(Math.random() * choices.length);
+//   return choices[randomNumber];
+// }
+// const randomAnswer = getRandomComputerChoice(randomQuestion.choices); // === choices: ["19", "20", "21"],
+// function getResults(question, answer) {
+//   if (answer == question.answer) {
+//     return "The computer's choice is correct!";
+//   } else {
+//     return `The computer's choice is wrong. The correct answer is: ${question.answer}`;
+//   }
+// }
+
+// console.log(randomQuestion);
+// console.log(randomAnswer);
+// console.log(getResults(randomQuestion, randomAnswer));
+
+// function getWordCount(sentence) {
+//   let space = " ";
+//   let count = 0;
+//   let checkSpace = true;
+//   for (let i = 0; i < sentence.length; i++) {
+//     if (sentence[i] !== space && checkSpace) {
+//       count++;
+//       checkSpace = false;
+//     } else if (sentence[i] === space) {
+//       checkSpace = true;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(getWordCount(" "));
+// console.log(getWordCount("s"));
+// console.log(getWordCount("s s"));
+// console.log(getWordCount("123 456"));
+// console.log(getWordCount("When are you gonna start learning to code?"));
+
+let questions = [
+  {
+    category: "school",
+    question: "what's 9 + 10?",
+    choices: ["19", "20", "21"],
+    answer: "21",
+  },
+  {
+    category: "memes",
+    question: "what's 9 + 10?",
+    choices: ["19", "20", "21"],
+    answer: "21",
+  },
+  {
+    category: "funny",
+    question: "what's 9 + 10?",
+    choices: ["19", "20", "21"],
+    answer: "21",
+  },
+  {
+    category: "vines",
+    question: "what's 9 + 10?",
+    choices: ["19", "20", "21"],
+    answer: "21",
+  },
+  {
+    category: "tiktok",
+    question: "what's 9 + 10?",
+    choices: ["19", "20", "21"],
+    answer: "21",
+  },
+];
+function getRandomQuestion(array) {
+  let randomNumber = Math.floor(Math.random() * array.length);
+  return array[randomNumber];
+}
+const randomQuestion = getRandomQuestion(questions);
+
+function getRandomComputerChoice(choices) {
+  let randomNumber = Math.floor(Math.random() * choices.length);
+  return choices[randomNumber];
+}
+const randomAnswer = getRandomComputerChoice(randomQuestion.choices);
+
+function getResults(question, answer) {
+  if (question.answer == answer) {
+    return "The computer's choice is correct!";
+  } else {
+    return `The computer's choice is wrong. The correct answer is: ${question.answer}`;
+  }
+}
+console.log(randomQuestion);
+console.log(randomAnswer);
+console.log(getResults(randomQuestion, randomAnswer));
