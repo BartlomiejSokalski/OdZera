@@ -652,24 +652,38 @@
 // console.log(randomAnswer);
 // console.log(getResults(randomQuestion, randomAnswer));
 
-function getWordCount(sentence) {
-  let space = " ";
-  let count = 0;
-  let letter = true;
-  for (const word of sentence) {
-    if (word != space && letter == true) {
-      count++;
-      letter = false;
-    } else if (word == space) {
-      letter = true;
+// function getWordCount(sentence) {
+//   let space = " ";
+//   let count = 0;
+//   let letter = true;
+//   for (const word of sentence) {
+//     if (word != space && letter == true) {
+//       count++;
+//       letter = false;
+//     } else if (word == space) {
+//       letter = true;
+//     }
+//   }
+//   return count;
+// }
+// // console.log(getWordCount(" "));
+// // console.log(getWordCount("s"));
+// // console.log(getWordCount("s s"));
+// console.log(getWordCount("213 456"));
+// console.log(getWordCount("12 3 45 6"));
+
+// // console.log(getWordCount("When are you gonna start learning to code?"));
+let num = 5;
+function factorialCalcutlator(num) {
+  for (let i = num - 1; i > 1; i--) {
+    if (num === 0) {
+      return 1;
+    } else {
+      num *= i;
+      // console.log(`I: ${i}`);
+      // console.log(`num: ${num}`);
     }
   }
-  return count;
+  return num;
 }
-// console.log(getWordCount(" "));
-// console.log(getWordCount("s"));
-// console.log(getWordCount("s s"));
-console.log(getWordCount("213 456"));
-console.log(getWordCount("12 3 45 6"));
-
-// console.log(getWordCount("When are you gonna start learning to code?"));
+console.log(factorialCalcutlator(num));
