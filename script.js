@@ -673,17 +673,50 @@
 // console.log(getWordCount("12 3 45 6"));
 
 // // console.log(getWordCount("When are you gonna start learning to code?"));
-let num = 5;
-function factorialCalcutlator(num) {
-  for (let i = num - 1; i > 1; i--) {
-    if (num === 0) {
-      return 1;
-    } else {
-      num *= i;
-      // console.log(`I: ${i}`);
-      // console.log(`num: ${num}`);
+// let num = 5;
+// function factorialCalcutlator(num) {
+//   for (let i = num - 1; i > 1; i--) {
+//     if (num === 0) {
+//       return 1;
+//     } else {
+//       num *= i;
+//       // console.log(`I: ${i}`);
+//       // console.log(`num: ${num}`);
+//     }
+//   }
+//   return num;
+// }
+// console.log(factorialCalcutlator(num));
+const characters = [];
+const check = [];
+let validation = true;
+function mutation(array) {
+  let firstWord = array[0].toLowerCase();
+  let secondWord = array[1].toLowerCase();
+  for (const letter1 of firstWord) {
+    characters.push(letter1);
+  }
+  for (const letter2 of secondWord) {
+    check.push(letter2);
+  }
+  for (let i = 0; i < characters.length; i++) {
+    let matchFound = false; // to dodał chat
+    for (let j = 0; j < check.length; j++) {
+      if (characters[i] === check[j]) {
+        matchFound = true; // to dodał chat
+        break; // to dodał chat
+      }
+    }
+    if (!matchFound) {
+      // to dodał chat
+      validation = false;
+      break; // to dodał chat
     }
   }
-  return num;
+  return validation;
 }
-console.log(factorialCalcutlator(num));
+console.log(mutation(["hello", "wlleh"]));
+// if (characters[2] === characters[3]) {
+//     characters.splice(3, 1);
+//     console.log(`wywalem ${characters[2]}`);
+//
