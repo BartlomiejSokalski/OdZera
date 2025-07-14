@@ -687,36 +687,94 @@
 //   return num;
 // }
 // console.log(factorialCalcutlator(num));
-const characters = [];
-const check = [];
-let validation = true;
-function mutation(array) {
-  let firstWord = array[0].toLowerCase();
-  let secondWord = array[1].toLowerCase();
-  for (const letter1 of firstWord) {
-    characters.push(letter1);
-  }
-  for (const letter2 of secondWord) {
-    check.push(letter2);
-  }
-  for (let i = 0; i < characters.length; i++) {
-    let matchFound = false; // to dodał chat
-    for (let j = 0; j < check.length; j++) {
-      if (characters[i] === check[j]) {
-        matchFound = true; // to dodał chat
-        break; // to dodał chat
-      }
-    }
-    if (!matchFound) {
-      // to dodał chat
-      validation = false;
-      break; // to dodał chat
-    }
-  }
-  return validation;
+
+// const characters = [];
+// const check = [];
+// let validation = true;
+// function mutation(array) {
+//   let firstWord = array[0].toLowerCase();
+//   let secondWord = array[1].toLowerCase();
+//   for (const letter1 of firstWord) {
+//     characters.push(letter1);
+//   }
+//   for (const letter2 of secondWord) {
+//     check.push(letter2);
+//   }
+//   for (let i = 0; i < characters.length; i++) {
+//     let matchFound = false; // to dodał chat
+//     for (let j = 0; j < check.length; j++) {
+//       if (characters[i] === check[j]) {
+//         matchFound = true; // to dodał chat
+//         break; // to dodał chat
+//       }
+//     }
+//     if (!matchFound) {
+//       // to dodał chat
+//       validation = false;
+//       break; // to dodał chat
+//     }
+//   }
+//   return validation;
+// }
+// console.log(mutation(["hello", "wlleh"]));
+// // if (characters[2] === characters[3]) {
+// //     characters.splice(3, 1);
+// //     console.log(`wywalem ${characters[2]}`);
+// //
+
+let questions = [
+  {
+    category: "school",
+    question: "what's 9 + 10?",
+    choices: ["19", "20", "21"],
+    answer: "21",
+  },
+  {
+    category: "memes",
+    question: "what's 9 + 10?",
+    choices: ["19", "20", "21"],
+    answer: "21",
+  },
+  {
+    category: "funny",
+    question: "what's 9 + 10?",
+    choices: ["19", "20", "21"],
+    answer: "21",
+  },
+  {
+    category: "vines",
+    question: "what's 9 + 10?",
+    choices: ["19", "20", "21"],
+    answer: "21",
+  },
+  {
+    category: "tiktok",
+    question: "what's 9 + 10?",
+    choices: ["19", "20", "21"],
+    answer: "21",
+  },
+];
+function getRandomQuestion(array) {
+  let randomNumber = Math.floor(Math.random() * array.length);
+  return array[randomNumber];
 }
-console.log(mutation(["hello", "wlleh"]));
-// if (characters[2] === characters[3]) {
-//     characters.splice(3, 1);
-//     console.log(`wywalem ${characters[2]}`);
-//
+const randomQuestion = getRandomQuestion(questions);
+
+function getRandomComputerChoice(choices) {
+  let randomNumber = Math.floor(Math.random() * choices.length);
+  return choices[randomNumber];
+}
+const randomAnswer = getRandomComputerChoice(randomQuestion.choices);
+
+// // console.log(randomAnswer);
+console.log(randomQuestion);
+console.log(randomAnswer);
+
+function getResults(question, answer) {
+  if (question.answer == answer) {
+    return "komputer ma racje";
+  } else {
+    return `komputer nie ma racji, to jest poprawna odpowiedz: ${question.answer}`;
+  }
+}
+console.log(getResults(randomQuestion, randomAnswer));
