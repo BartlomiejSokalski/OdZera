@@ -809,21 +809,26 @@
 
 // console.log(mutation(["hello", "hey"]));
 
-function chunkArrayInGroups(array, num) {
-  const arr = [];
-  for (var i = 0; i < 1000; i++) {
-    var cut = array.splice(0, num);
-    if (cut.length != 0) {
-      arr.push(cut);
-    }
-  }
-  return JSON.stringify(arr);
-}
+// function chunkArrayInGroups(array, num) {
+//   const arr = [];
+//   for (var i = 0; i < 1000; i++) {
+//     var cut = array.splice(0, num);
+//     if (cut.length != 0) {
+//       arr.push(cut);
+//     }
+//   }
+//   return JSON.stringify(arr);
+// }
 
-// console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
-//console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));
-//console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2));
-//console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));
-//console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3));
-//console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4));
-console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2));
+// // console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
+// //console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3));
+// //console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2));
+// //console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));
+// //console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3));
+// //console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4));
+// console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2));
+const numbers = [1, 2, 3, 4, 5];
+
+for (const num of numbers) {
+  console.log(num);
+}
