@@ -722,59 +722,89 @@
 // //     console.log(`wywalem ${characters[2]}`);
 // //
 
-let questions = [
-  {
-    category: "school",
-    question: "what's 9 + 10?",
-    choices: ["19", "20", "21"],
-    answer: "21",
-  },
-  {
-    category: "memes",
-    question: "what's 9 + 10?",
-    choices: ["19", "20", "21"],
-    answer: "21",
-  },
-  {
-    category: "funny",
-    question: "what's 9 + 10?",
-    choices: ["19", "20", "21"],
-    answer: "21",
-  },
-  {
-    category: "vines",
-    question: "what's 9 + 10?",
-    choices: ["19", "20", "21"],
-    answer: "21",
-  },
-  {
-    category: "tiktok",
-    question: "what's 9 + 10?",
-    choices: ["19", "20", "21"],
-    answer: "21",
-  },
-];
-function getRandomQuestion(array) {
-  let randomNumber = Math.floor(Math.random() * array.length);
-  return array[randomNumber];
-}
-const randomQuestion = getRandomQuestion(questions);
+// let questions = [
+//   {
+//     category: "school",
+//     question: "what's 9 + 10?",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+//   {
+//     category: "memes",
+//     question: "what's 9 + 10?",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+//   {
+//     category: "funny",
+//     question: "what's 9 + 10?",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+//   {
+//     category: "vines",
+//     question: "what's 9 + 10?",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+//   {
+//     category: "tiktok",
+//     question: "what's 9 + 10?",
+//     choices: ["19", "20", "21"],
+//     answer: "21",
+//   },
+// ];
+// function getRandomQuestion(array) {
+//   let randomNumber = Math.floor(Math.random() * array.length);
+//   return array[randomNumber];
+// }
+// const randomQuestion = getRandomQuestion(questions);
 
-function getRandomComputerChoice(choices) {
-  let randomNumber = Math.floor(Math.random() * choices.length);
-  return choices[randomNumber];
-}
-const randomAnswer = getRandomComputerChoice(randomQuestion.choices);
+// function getRandomComputerChoice(choices) {
+//   let randomNumber = Math.floor(Math.random() * choices.length);
+//   return choices[randomNumber];
+// }
+// const randomAnswer = getRandomComputerChoice(randomQuestion.choices);
 
-// // console.log(randomAnswer);
-console.log(randomQuestion);
-console.log(randomAnswer);
+// // // console.log(randomAnswer);
+// console.log(randomQuestion);
+// console.log(randomAnswer);
 
-function getResults(question, answer) {
-  if (question.answer == answer) {
-    return "komputer ma racje";
-  } else {
-    return `komputer nie ma racji, to jest poprawna odpowiedz: ${question.answer}`;
+// function getResults(question, answer) {
+//   if (question.answer == answer) {
+//     return "komputer ma racje";
+//   } else {
+//     return `komputer nie ma racji, to jest poprawna odpowiedz: ${question.answer}`;
+//   }
+// }
+// console.log(getResults(randomQuestion, randomAnswer));
+
+// function mutation(array) {
+//   for (const word1 of array[0]) {
+//     var firstWord = word1;
+//   }
+//   for (const word2 of array[1]) {
+//     var secondWord = word2;
+//   }
+//   if (firstWord.includes(secondWord)) {
+//     console.log("blad");
+//   } else {
+//     console.log("dobrze");
+//   }
+// }
+
+// console.log(mutation(["hello", "he"]));
+
+function mutation(array) {
+  let firstWord = array[0].toLowerCase();
+  let secondWord = array[1].toLowerCase();
+
+  for (let letter of secondWord) {
+    if (!firstWord.includes(letter)) {
+      return false;
+    }
   }
+  return true;
 }
-console.log(getResults(randomQuestion, randomAnswer));
+
+console.log(mutation(["hello", "hey"]));
