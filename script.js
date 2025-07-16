@@ -827,8 +827,83 @@
 // //console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3));
 // //console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4));
 // console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2));
-const numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];
 
-for (const num of numbers) {
-  console.log(num);
+// for (const num of numbers) {
+//   console.log(num);
+// }
+
+// const fruit = {
+//   name: 'apple',
+//   color: 'red',
+//   price: 0.99
+// };
+
+// for (const prop in fruit) {
+//   console.log(fruit[prop]);
+// }
+
+// let i = 5;
+
+// while (i > 0) {
+//   console.log(i);
+//   i--;
+// }
+
+// let userInput;
+
+// do {
+//   userInput = prompt("Please enter a number between 1 and 10");
+// } while (Number(userInput) < 1 || Number(userInput) > 10);
+
+// alert("You entered a valid number!");
+
+// // Example of break statement
+// for (let i = 0; i < 10; i++) {
+//   if (i === 5) {
+//     break;
+//   }
+//   console.log(i);
+// }
+
+// // Output: 0, 1, 2, 3, and 4
+
+// // Example of continue statement
+// for (let i = 0; i < 10; i++) {
+//   if (i === 5) {
+//     continue;
+//   }
+//   console.log(i);
+// }
+
+// // Output: 0, 1, 2, 3, 4, 6, 7, 8, and 9
+
+// for (let i = 0; i < 25; i += 2) {
+//   if (i % 5 === 0) {
+//     continue;
+//   }
+//   if (i % 13 === 0) {
+//     break;
+//   }
+//   console.log(i);
+// }
+let newArray = [];
+function frankenSplice(array1, array2, index) {
+  newArray = [...array1];
+  for (let i = 0; i < index; i++) {
+    newArray.splice(i, 0, array2[i]);
+  }
+  for (let i = index; i < array2.length; i++) {
+    newArray.push(array2[i]);
+  }
+  console.log(array1);
+  console.log(array2);
+
+  return newArray;
 }
+// console.log(frankenSplice([1, 2, 3], [4, 5], 1));
+// console.log(frankenSplice([1, 2], ["a", "b"], 1));
+// console.log(
+//   frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2)
+// );
+console.log(frankenSplice([1, 2, 3, 4], [], 0));
