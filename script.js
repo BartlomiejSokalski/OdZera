@@ -887,23 +887,42 @@
 //   }
 //   console.log(i);
 // }
-let newArray = [];
-function frankenSplice(array1, array2, index) {
-  newArray = [...array1];
-  for (let i = 0; i < index; i++) {
-    newArray.splice(i, 0, array2[i]);
-  }
-  for (let i = index; i < array2.length; i++) {
-    newArray.push(array2[i]);
-  }
-  console.log(array1);
-  console.log(array2);
+// let newArray = [];
+// function frankenSplice(array1, array2, index) {
+//   newArray = [...array1];
+//   for (let i = 0; i < index; i++) {
+//     newArray.splice(i, 0, array2[i]);
+//   }
+//   for (let i = index; i < array2.length; i++) {
+//     newArray.push(array2[i]);
+//   }
+//   console.log(array1);
+//   console.log(array2);
 
-  return newArray;
-}
+//   return newArray;
+// }
 // console.log(frankenSplice([1, 2, 3], [4, 5], 1));
 // console.log(frankenSplice([1, 2], ["a", "b"], 1));
 // console.log(
 //   frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2)
 // );
-console.log(frankenSplice([1, 2, 3, 4], [], 0));
+// console.log(frankenSplice([1, 2, 3, 4], [], 0));
+
+// function pyramid(star, int) {
+//   for (let i = 0; i < int; i++) {
+//     star += star;
+//     for (let j = 0; j <= i; j++) {
+//       star = star + "\n";
+//     }
+//   }
+//   return star;
+// }
+// console.log(pyramid("o", 2));
+const space = " ";
+function pyramid(star, int) {
+  for (let i = 1; i < int; i++) {
+    console.log(space.repeat(int - i) + star.repeat(2 * i - 1));
+  }
+  return "    ||";
+}
+console.log(pyramid("*", 6));
