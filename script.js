@@ -918,11 +918,57 @@
 //   return star;
 // }
 // console.log(pyramid("o", 2));
-const space = " ";
-function pyramid(star, int) {
-  for (let i = 1; i < int; i++) {
-    console.log(space.repeat(int - i) + star.repeat(2 * i - 1));
+// const space = " ";
+// function pyramid(star, int) {
+//   for (let i = 1; i < int; i++) {
+//     console.log(space.repeat(int - i) + star.repeat(2 * i - 1));
+//   }
+//   return "    ||";
+// }
+// console.log(pyramid("*", 6));
+
+function getAverage(array) {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum = array[i] + sum;
   }
-  return "    ||";
+  sum = sum / array.length;
+  return sum;
 }
-console.log(pyramid("*", 6));
+function getGrade(grade) {
+  switch (true) {
+    case grade > 99 && grade <= 100:
+      return "A+";
+    case grade >= 90:
+      return "A";
+    case grade >= 80:
+      return "B";
+    case grade >= 70:
+      return "C";
+    case grade >= 60:
+      return "D";
+    default:
+      return "F";
+  }
+}
+
+function hasPassingGrade(grade) {
+  return getGrade(grade) != "F" ? true : false;
+}
+function studentMsg(array, grade) {
+  if (hasPassingGrade(grade)) {
+    return `Class average: ${getAverage(array)} Your grade: ${getGrade(
+      grade
+    )}. You passed the course.`;
+  } else {
+    return `Class average: ${getAverage(array)} Your grade: ${getGrade(
+      grade
+    )}. You failed the course.`;
+  }
+}
+
+console.log(studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 37));
+
+// console.log(getAverage([10, 20, 30, 40, 50, 60, 70, 97]));
+// console.log(getGrade(60));
+// console.log(studentMsg());
