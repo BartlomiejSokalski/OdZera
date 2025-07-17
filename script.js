@@ -989,49 +989,51 @@ let inventory = [
 //     return array[i]
 // }
 // }
-// function addProduct(product) {
-//   for (const check of inventory) {
-//     if (check.name.includes(product.name)) {
-//       check.quantity = product.quantity + 1;
+function addProduct(product) {
+  for (const check of inventory) {
+    if (check.name.includes(product.name)) {
+      check.quantity += 1;
 
-//       return JSON.stringify(inventory);
-//     } else {
-//       inventory.push(product);
-//       return JSON.stringify(inventory);
-//     }
-//   }
-// }
+      return JSON.stringify(inventory);
+    } else {
+      inventory.push(product);
+      return JSON.stringify(inventory);
+    }
+  }
+}
 
-// function removeProduct(product) {
-//   for (const check of inventory) {
-//     console.log(check);
+function removeProduct(product) {
+  for (let check of inventory) {
+    console.log(check.name);
 
-//     if (check.name.includes(product.name)) {
-//       inventory.splice(check, 1);
-//       return JSON.stringify(inventory);
-//     } else {
-//       return "no products to delete";
-//     }
-//   }
-// }
+    if (check.name.includes(product.name)) {
+      check.quantity -= 1;
+      if (check.quantity <= 0) {
+        inventory.splice(check, 1);
+      }
+      return JSON.stringify(inventory);
+    }
+  }
+  return "błąd";
+}
 
 // // console.log(findProductIndex(inventory));
 // console.log(addProduct({ name: "cat", quantity: 1 }));
-// console.log(removeProduct({ name: "cat", quantity: 1 }));
-function xd(array) {
-  for (let i = 0; i < array.length; i++) {
-    console.log(array[i]);
-  }
-}
-function xddd(array) {
-  for (const letter in inventory) {
-    console.log(letter.name);
-  }
-}
-function xdd(array) {
-  for (const letter of inventory) {
-    console.log(letter.name);
-  }
-}
+console.log(removeProduct({ name: "parrot", quantity: 1 }));
+// function xd(array) {
+//   for (let i = 0; i < array.length; i++) {
+//     console.log(array[i]);
+//   }
+// }
+// function xddd(array) {
+//   for (const letter in inventory) {
+//     console.log(letter.name);
+//   }
+// }
+// function xdd(array) {
+//   for (const letter of inventory) {
+//     console.log(letter.name);
+//   }
+// }
 
-console.log(xdd(inventory));
+// console.log(xdd(inventory));
