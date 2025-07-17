@@ -1032,19 +1032,46 @@ const js = require("@eslint/js");
 // }
 
 // console.log(xdd(inventory));
-let alphabet =
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
-function generatePassword(num) {
-  let randomLetter;
-  let password2 = [];
-  for (let i = 0; i < num; i++) {
-    let randomNumber = Math.floor(Math.random() * alphabet.length);
-    randomLetter = alphabet[randomNumber];
-    password2.push(randomLetter);
-  }
-  let password = password2.join("");
-  console.log(typeof password);
+// let alphabet =
+//   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+// function generatePassword(num) {
+//   let randomLetter;
+//   let password2 = [];
+//   for (let i = 0; i < num; i++) {
+//     let randomNumber = Math.floor(Math.random() * alphabet.length);
+//     randomLetter = alphabet[randomNumber];
+//     password2.push(randomLetter);
+//   }
+//   let password = password2.join("");
+//   return password;
+// }
+// console.log(`Generated password: ${generatePassword(7)}`);
 
-  return password;
+function sumAll(array) {
+  let newArray = [];
+  let sum = 0;
+  let finalSum = 0;
+  let firstNumber = array[0];
+  let secondNumber = array[1];
+  if (secondNumber > firstNumber) {
+    for (let i = firstNumber; i < secondNumber; i++) {
+      newArray.push(i);
+    }
+    for (let i = 0; i < newArray.length; i++) {
+      sum += newArray[i];
+      finalSum = sum + secondNumber;
+    }
+  } else {
+    for (let i = secondNumber; i < firstNumber; i++) {
+      newArray.push(i);
+    }
+
+    for (let i = 0; i < newArray.length; i++) {
+      sum += newArray[i];
+      finalSum = sum + firstNumber;
+    }
+  }
+
+  return finalSum;
 }
-console.log(`Generated password: ${generatePassword(7)}`);
+console.log(sumAll([7, 3]));
