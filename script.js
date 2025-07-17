@@ -974,51 +974,47 @@ const js = require("@eslint/js");
 // // console.log(getAverage([10, 20, 30, 40, 50, 60, 70, 97]));
 // // console.log(getGrade(60));
 // // console.log(studentMsg());
-let inventory = [
-  { name: "dog", quantity: 1 },
+// let inventory = [{ name: "flour", quantity: 5 }];
 
-  { name: "cat", quantity: 2 },
-  { name: "bird", quantity: 3 },
-];
+// function findProductIndex(productName) {
+//   let counter = -1;
+//   for (const check of inventory) {
+//     counter++;
+//     if (check.name.includes(productName)) {
+//       return counter;
+//     }
+//   }
+//   return "nie ma tkaiego produtku";
+// }
+// function addProduct(product) {
+//   product.name = product.name.toLowerCase();
+//   for (const check of inventory) {
+//     if (check.name.includes(product.name)) {
+//       check.quantity += product.quantity;
 
-function findProductIndex(productName) {
-  let counter = -1;
-  for (const check of inventory) {
-    counter++;
-    if (check.name.includes(productName)) {
-      return counter;
-    }
-  }
-  return "nie ma tkaiego produtku";
-}
-function addProduct(product) {
-  for (const check of inventory) {
-    if (check.name.includes(product.name)) {
-      check.quantity += 1;
+//       return JSON.stringify(inventory);
+//     }
+//   }
+//   inventory.push(product);
+//   return JSON.stringify(inventory);
+// }
 
-      return JSON.stringify(inventory);
-    }
-  }
-  inventory.push(product);
-  return JSON.stringify(inventory);
-}
+// function removeProduct(product) {
+//   for (let check of inventory) {
+//     if (check.name.includes(product.name)) {
+//       check.quantity -= 1;
+//       if (check.quantity <= 0) {
+//         inventory.splice(check, 1);
+//       }
+//       return JSON.stringify(inventory);
+//     }
+//   }
+//   return "błąd";
+// }
 
-function removeProduct(product) {
-  for (let check of inventory) {
-    if (check.name.includes(product.name)) {
-      check.quantity -= 1;
-      if (check.quantity <= 0) {
-        inventory.splice(check, 1);
-      }
-      return JSON.stringify(inventory);
-    }
-  }
-  return "błąd";
-}
-
-console.log(findProductIndex("bird"));
-console.log(addProduct({ name: "dog", quantity: 1 }));
-console.log(removeProduct({ name: "dog", quantity: 1 }));
+// console.log(findProductIndex("bird"));
+// console.log(addProduct({ name: "FLOUR", quantity: 5 }));
+// console.log(removeProduct({ name: "dog", quantity: 1 }));
 // function xd(array) {
 //   for (let i = 0; i < array.length; i++) {
 //     console.log(array[i]);
@@ -1036,3 +1032,19 @@ console.log(removeProduct({ name: "dog", quantity: 1 }));
 // }
 
 // console.log(xdd(inventory));
+let alphabet =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+function generatePassword(num) {
+  let randomLetter;
+  let password2 = [];
+  for (let i = 0; i < num; i++) {
+    let randomNumber = Math.floor(Math.random() * alphabet.length);
+    randomLetter = alphabet[randomNumber];
+    password2.push(randomLetter);
+  }
+  let password = password2.join("");
+  console.log(typeof password);
+
+  return password;
+}
+console.log(`Generated password: ${generatePassword(7)}`);
