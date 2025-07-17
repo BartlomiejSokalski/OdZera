@@ -981,14 +981,16 @@ let inventory = [
   { name: "bird", quantity: 3 },
 ];
 
-// function findProductIndex (array) {
-// if (array.length <= 0) {
-//     return -1
-// } else {
-//     for (const i of array)
-//     return array[i]
-// }
-// }
+function findProductIndex(productName) {
+  let counter = -1;
+  for (const check of inventory) {
+    counter++;
+    if (check.name.includes(productName)) {
+      return counter;
+    }
+  }
+  return "nie ma tkaiego produtku";
+}
 function addProduct(product) {
   for (const check of inventory) {
     if (check.name.includes(product.name)) {
@@ -1001,22 +1003,22 @@ function addProduct(product) {
   return JSON.stringify(inventory);
 }
 
-// function removeProduct(product) {
-//   for (let check of inventory) {
-//     if (check.name.includes(product.name)) {
-//       check.quantity -= 1;
-//       if (check.quantity <= 0) {
-//         inventory.splice(check, 1);
-//       }
-//       return JSON.stringify(inventory);
-//     }
-//   }
-//   return "błąd";
-// }
+function removeProduct(product) {
+  for (let check of inventory) {
+    if (check.name.includes(product.name)) {
+      check.quantity -= 1;
+      if (check.quantity <= 0) {
+        inventory.splice(check, 1);
+      }
+      return JSON.stringify(inventory);
+    }
+  }
+  return "błąd";
+}
 
-// // console.log(findProductIndex(inventory));
+console.log(findProductIndex("bird"));
 console.log(addProduct({ name: "dog", quantity: 1 }));
-// console.log(removeProduct({ name: "cat", quantity: 1 }));
+console.log(removeProduct({ name: "dog", quantity: 1 }));
 // function xd(array) {
 //   for (let i = 0; i < array.length; i++) {
 //     console.log(array[i]);
