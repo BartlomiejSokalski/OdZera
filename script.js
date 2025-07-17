@@ -7,6 +7,8 @@
 //     let cutSurrname = person.slice(0, shortSurrname);
 //     let dot = ".";
 
+const js = require("@eslint/js");
+
 //     let allTogether = cutSurrname + dot;
 //     return allTogether;
 //   }
@@ -927,48 +929,109 @@
 // }
 // console.log(pyramid("*", 6));
 
-function getAverage(array) {
-  let sum = 0;
+// function getAverage(array) {
+//   let sum = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     sum = array[i] + sum;
+//   }
+//   sum = sum / array.length;
+//   return sum;
+// }
+// function getGrade(grade) {
+//   switch (true) {
+//     case grade > 99 && grade <= 100:
+//       return "A+";
+//     case grade >= 90:
+//       return "A";
+//     case grade >= 80:
+//       return "B";
+//     case grade >= 70:
+//       return "C";
+//     case grade >= 60:
+//       return "D";
+//     default:
+//       return "F";
+//   }
+// }
+
+// function hasPassingGrade(grade) {
+//   return getGrade(grade) != "F" ? true : false;
+// }
+// function studentMsg(array, grade) {
+//   if (hasPassingGrade(grade)) {
+//     return `Class average: ${getAverage(array)} Your grade: ${getGrade(
+//       grade
+//     )}. You passed the course.`;
+//   } else {
+//     return `Class average: ${getAverage(array)} Your grade: ${getGrade(
+//       grade
+//     )}. You failed the course.`;
+//   }
+// }
+
+// console.log(studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 37));
+
+// // console.log(getAverage([10, 20, 30, 40, 50, 60, 70, 97]));
+// // console.log(getGrade(60));
+// // console.log(studentMsg());
+let inventory = [
+  { name: "dog", quantity: 1 },
+
+  { name: "cat", quantity: 2 },
+  { name: "bird", quantity: 3 },
+];
+
+// function findProductIndex (array) {
+// if (array.length <= 0) {
+//     return -1
+// } else {
+//     for (const i of array)
+//     return array[i]
+// }
+// }
+// function addProduct(product) {
+//   for (const check of inventory) {
+//     if (check.name.includes(product.name)) {
+//       check.quantity = product.quantity + 1;
+
+//       return JSON.stringify(inventory);
+//     } else {
+//       inventory.push(product);
+//       return JSON.stringify(inventory);
+//     }
+//   }
+// }
+
+// function removeProduct(product) {
+//   for (const check of inventory) {
+//     console.log(check);
+
+//     if (check.name.includes(product.name)) {
+//       inventory.splice(check, 1);
+//       return JSON.stringify(inventory);
+//     } else {
+//       return "no products to delete";
+//     }
+//   }
+// }
+
+// // console.log(findProductIndex(inventory));
+// console.log(addProduct({ name: "cat", quantity: 1 }));
+// console.log(removeProduct({ name: "cat", quantity: 1 }));
+function xd(array) {
   for (let i = 0; i < array.length; i++) {
-    sum = array[i] + sum;
+    console.log(array[i]);
   }
-  sum = sum / array.length;
-  return sum;
 }
-function getGrade(grade) {
-  switch (true) {
-    case grade > 99 && grade <= 100:
-      return "A+";
-    case grade >= 90:
-      return "A";
-    case grade >= 80:
-      return "B";
-    case grade >= 70:
-      return "C";
-    case grade >= 60:
-      return "D";
-    default:
-      return "F";
+function xddd(array) {
+  for (const letter in inventory) {
+    console.log(letter.name);
+  }
+}
+function xdd(array) {
+  for (const letter of inventory) {
+    console.log(letter.name);
   }
 }
 
-function hasPassingGrade(grade) {
-  return getGrade(grade) != "F" ? true : false;
-}
-function studentMsg(array, grade) {
-  if (hasPassingGrade(grade)) {
-    return `Class average: ${getAverage(array)} Your grade: ${getGrade(
-      grade
-    )}. You passed the course.`;
-  } else {
-    return `Class average: ${getAverage(array)} Your grade: ${getGrade(
-      grade
-    )}. You failed the course.`;
-  }
-}
-
-console.log(studentMsg([92, 88, 12, 77, 57, 100, 67, 38, 97, 89], 37));
-
-// console.log(getAverage([10, 20, 30, 40, 50, 60, 70, 97]));
-// console.log(getGrade(60));
-// console.log(studentMsg());
+console.log(xdd(inventory));
