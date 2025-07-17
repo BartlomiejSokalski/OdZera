@@ -995,31 +995,28 @@ function addProduct(product) {
       check.quantity += 1;
 
       return JSON.stringify(inventory);
-    } else {
-      inventory.push(product);
-      return JSON.stringify(inventory);
     }
   }
+  inventory.push(product);
+  return JSON.stringify(inventory);
 }
 
-function removeProduct(product) {
-  for (let check of inventory) {
-    console.log(check.name);
-
-    if (check.name.includes(product.name)) {
-      check.quantity -= 1;
-      if (check.quantity <= 0) {
-        inventory.splice(check, 1);
-      }
-      return JSON.stringify(inventory);
-    }
-  }
-  return "błąd";
-}
+// function removeProduct(product) {
+//   for (let check of inventory) {
+//     if (check.name.includes(product.name)) {
+//       check.quantity -= 1;
+//       if (check.quantity <= 0) {
+//         inventory.splice(check, 1);
+//       }
+//       return JSON.stringify(inventory);
+//     }
+//   }
+//   return "błąd";
+// }
 
 // // console.log(findProductIndex(inventory));
-// console.log(addProduct({ name: "cat", quantity: 1 }));
-console.log(removeProduct({ name: "parrot", quantity: 1 }));
+console.log(addProduct({ name: "dog", quantity: 1 }));
+// console.log(removeProduct({ name: "cat", quantity: 1 }));
 // function xd(array) {
 //   for (let i = 0; i < array.length; i++) {
 //     console.log(array[i]);
