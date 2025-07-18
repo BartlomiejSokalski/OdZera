@@ -1047,31 +1047,47 @@ const js = require("@eslint/js");
 // }
 // console.log(`Generated password: ${generatePassword(7)}`);
 
-function sumAll(array) {
-  let newArray = [];
-  let sum = 0;
-  let finalSum = 0;
-  let firstNumber = array[0];
-  let secondNumber = array[1];
-  if (secondNumber > firstNumber) {
-    for (let i = firstNumber; i < secondNumber; i++) {
-      newArray.push(i);
-    }
-    for (let i = 0; i < newArray.length; i++) {
-      sum += newArray[i];
-      finalSum = sum + secondNumber;
-    }
-  } else {
-    for (let i = secondNumber; i < firstNumber; i++) {
-      newArray.push(i);
-    }
+// function sumAll(array) {
+//   let newArray = [];
+//   let sum = 0;
+//   let finalSum = 0;
+//   let firstNumber = array[0];
+//   let secondNumber = array[1];
+//   if (secondNumber > firstNumber) {
+//     for (let i = firstNumber; i < secondNumber; i++) {
+//       newArray.push(i);
+//     }
+//     for (let i = 0; i < newArray.length; i++) {
+//       sum += newArray[i];
+//       finalSum = sum + secondNumber;
+//     }
+//   } else if (firstNumber > secondNumber) {
+//     for (let i = secondNumber; i < firstNumber; i++) {
+//       newArray.push(i);
+//     }
 
-    for (let i = 0; i < newArray.length; i++) {
-      sum += newArray[i];
-      finalSum = sum + firstNumber;
+//     for (let i = 0; i < newArray.length; i++) {
+//       sum += newArray[i];
+//       finalSum = sum + firstNumber;
+//     }
+//   } else if (firstNumber == secondNumber) {
+//     finalSum = firstNumber;
+//   }
+
+//   return finalSum;
+// }
+// console.log(sumAll([7, 3]));
+
+function getMax(array) {
+  let max = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (max < array[i]) {
+      max = array[i];
+    } else if (array[i] < 0 && max == 0) {
+      max = array[i];
     }
   }
-
-  return finalSum;
+  return `najwieksza liczba to ${max}`;
 }
-console.log(sumAll([7, 3]));
+
+console.log(getMax([-1, -3, -11, -1, -2]));
