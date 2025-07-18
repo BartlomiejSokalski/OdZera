@@ -1091,19 +1091,36 @@ const js = require("@eslint/js");
 // }
 
 // console.log(getMax([-1, -3, -11, -1, -2]));
-function charFrequency(string) {
-  const result = {};
+// function charFrequency(string) {
+//   const result = {};
 
-  for (let i = 0; i < string.length; i++) {
-    const char = string[i];
+//   for (let i = 0; i < string.length; i++) {
+//     const char = string[i];
 
-    if (result[char]) {
-      result[char] += 1;
-    } else {
-      result[char] = 1;
+//     if (result[char]) {
+//       result[char] += 1;
+//     } else {
+//       result[char] = 1;
+//     }
+//   }
+
+//   return result;
+// }
+// console.log(charFrequency("hello"));
+
+const people = [
+  { name: "Ola", age: 17 },
+  { name: "Jan", age: 22 },
+  { name: "Ewa", age: 18 },
+];
+
+function filterAdults(array) {
+  let adults = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].age >= 18) {
+      adults.push(array[i]);
     }
   }
-
-  return result;
+  return JSON.stringify(adults);
 }
-console.log(charFrequency("hello"));
+console.log(filterAdults(people));
