@@ -1108,19 +1108,42 @@ const js = require("@eslint/js");
 // }
 // console.log(charFrequency("hello"));
 
-const people = [
-  { name: "Ola", age: 17 },
-  { name: "Jan", age: 22 },
-  { name: "Ewa", age: 18 },
-];
+// const people = [
+//   { name: "Ola", age: 17 },
+//   { name: "Jan", age: 22 },
+//   { name: "Ewa", age: 18 },
+// ];
 
-function filterAdults(array) {
-  let adults = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].age >= 18) {
-      adults.push(array[i]);
+// function filterAdults(array) {
+//   let adults = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i].age >= 18) {
+//       adults.push(array[i]);
+//     }
+//   }
+//   return JSON.stringify(adults);
+// }
+// console.log(filterAdults(people));
+const data = {
+  a: 5,
+  b: {
+    b1: 10,
+    b2: {
+      b21: 3,
+    },
+  },
+  c: 2,
+};
+
+function sumValues(obj) {
+  let sum = 0;
+  for (let key in obj) {
+    if (typeof obj[key] === "number") {
+      sum += obj[key];
+    } else if (typeof obj[key] === "object") {
+      sum += sumValues(obj[key]);
     }
   }
-  return JSON.stringify(adults);
+  return sum;
 }
-console.log(filterAdults(people));
+console.log(sumValues(data));
