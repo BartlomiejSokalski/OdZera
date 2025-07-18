@@ -1218,17 +1218,32 @@ const js = require("@eslint/js");
 
 // console.log(totalPoints(scores));
 
-function charFrequency(str) {
-  let counter = 1;
-  let obj = {};
-  for (let letter of str) {
-    if (obj[letter]) {
-      obj[letter] = counter + 1;
-    } else {
-      obj[letter] = counter;
-    }
-  }
-  return obj;
-}
+// function charFrequency(str) {
+//   let counter = 1;
+//   let obj = {};
+//   for (let letter of str) {
+//     if (obj[letter]) {
+//       obj[letter] = counter + 1;
+//     } else {
+//       obj[letter] = counter;
+//     }
+//   }
+//   return obj;
+// }
 
-console.log(charFrequency("hello"));
+// console.log(charFrequency("hello"));
+
+const users = [
+  { name: "Bartek", age: 24 },
+  { name: "Ola", age: 19 },
+  { name: "Kasia", age: 31 },
+];
+
+function showUsers(arr) {
+  let human = "";
+  for (let person of arr) {
+    human += `${person.name} ma ${person.age} lata. \n`;
+  }
+  return human;
+}
+console.log(showUsers(users));
