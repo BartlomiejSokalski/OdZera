@@ -1124,26 +1124,44 @@ const js = require("@eslint/js");
 //   return JSON.stringify(adults);
 // }
 // console.log(filterAdults(people));
-const data = {
-  a: 5,
-  b: {
-    b1: 10,
-    b2: {
-      b21: 3,
-    },
-  },
-  c: 2,
-};
+// const data = {
+//   a: 5,
+//   b: {
+//     b1: 10,
+//     b2: {
+//       b21: 3,
+//     },
+//   },
+//   c: 2,
+// };
 
-function sumValues(obj) {
-  let sum = 0;
-  for (let key in obj) {
-    if (typeof obj[key] === "number") {
-      sum += obj[key];
-    } else if (typeof obj[key] === "object") {
-      sum += sumValues(obj[key]);
-    }
+// function sumValues(obj) {
+//   let sum = 0;
+//   for (let key in obj) {
+//     if (typeof obj[key] === "number") {
+//       sum += obj[key];
+//     } else if (typeof obj[key] === "object") {
+//       sum += sumValues(obj[key]);
+//     }
+//   }
+//   return sum;
+// }
+// console.log(sumValues(data));
+
+const cart = [
+  { name: "Banana", price: 2.5, quantity: 3 },
+  { name: "Milk", price: 3, quantity: 1 },
+  { name: "Bread", price: 4, quantity: 2 },
+];
+
+function checkout(cart) {
+  let multipleProducts = 0;
+
+  for (const item of cart) {
+    multipleProducts = item.price * item.quantity + multipleProducts;
   }
-  return sum;
+
+  return multipleProducts;
 }
-console.log(sumValues(data));
+
+console.log(checkout(cart));
