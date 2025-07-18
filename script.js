@@ -1233,17 +1233,34 @@ const js = require("@eslint/js");
 
 // console.log(charFrequency("hello"));
 
-const users = [
-  { name: "Bartek", age: 24 },
-  { name: "Ola", age: 19 },
-  { name: "Kasia", age: 31 },
-];
+// const users = [
+//   { name: "Bartek", age: 24 },
+//   { name: "Ola", age: 19 },
+//   { name: "Kasia", age: 31 },
+// ];
 
-function showUsers(arr) {
-  let human = "";
-  for (let person of arr) {
-    human += `${person.name} ma ${person.age} lata. \n`;
+// function showUsers(arr) {
+//   let human = "";
+//   for (let person of arr) {
+//     human += `${person.name} ma ${person.age} lata. \n`;
+//   }
+//   return human;
+// }
+// console.log(showUsers(users));
+
+const data = {
+  title: "nowość",
+  views: 1200,
+  category: "tech",
+};
+
+function uppercaseStrings(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] == "string") {
+      obj[key] = obj[key].toUpperCase();
+    }
   }
-  return human;
+  return obj;
 }
-console.log(showUsers(users));
+
+console.log(uppercaseStrings(data));
