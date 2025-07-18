@@ -1218,13 +1218,17 @@ const js = require("@eslint/js");
 
 // console.log(totalPoints(scores));
 
-const names = ["Kasia", "Bartek", "Ola"];
-
-function makeStatusObject(arr) {
-  const obj = {};
-  for (let item of arr) {
-    obj[item] = "online";
+function charFrequency(str) {
+  let counter = 1;
+  let obj = {};
+  for (let letter of str) {
+    if (obj[letter]) {
+      obj[letter] = counter + 1;
+    } else {
+      obj[letter] = counter;
+    }
   }
   return obj;
 }
-console.log(makeStatusObject(names));
+
+console.log(charFrequency("hello"));
