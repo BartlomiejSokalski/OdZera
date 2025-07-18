@@ -1201,19 +1201,30 @@ const js = require("@eslint/js");
 // }
 // console.log(doubleNumbers(stats));
 
-const scores = {
-  bartek: 120,
-  kasia: 95,
-  ola: 130,
-  michal: 150,
-};
+// const scores = {
+//   bartek: 120,
+//   kasia: 95,
+//   ola: 130,
+//   michal: 150,
+// };
 
-function totalPoints(array) {
-  let sum = 0;
-  for (let key in array) {
-    sum += array[key];
+// function totalPoints(array) {
+//   let sum = 0;
+//   for (let key in array) {
+//     sum += array[key];
+//   }
+//   return sum;
+// }
+
+// console.log(totalPoints(scores));
+
+const names = ["Kasia", "Bartek", "Ola"];
+
+function makeStatusObject(arr) {
+  const obj = {};
+  for (let item of arr) {
+    obj[item] = "online";
   }
-  return sum;
+  return obj;
 }
-
-console.log(totalPoints(scores));
+console.log(makeStatusObject(names));
