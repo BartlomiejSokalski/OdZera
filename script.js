@@ -1165,19 +1165,38 @@ const js = require("@eslint/js");
 // }
 
 // console.log(checkout(cart));
-const user = {
-  name: "Bartek",
-  age: 24,
-  country: "Polska",
+// const user = {
+//   name: "Bartek",
+//   age: 24,
+//   country: "Polska",
+// };
+
+// function countKeys(obj) {
+//   let counter = 0;
+//   for (let key in obj) {
+//     if (key) {
+//       counter++;
+//     }
+//   }
+//   return counter;
+// }
+// console.log(countKeys(user));
+
+const stats = {
+  views: 150,
+  likes: 20,
+  author: "Bartek",
+  shares: 10,
 };
 
-function countKeys(obj) {
-  let counter = 0;
+function doubleNumbers(obj) {
   for (let key in obj) {
-    if (key) {
-      counter++;
+    if (typeof obj[key] == "number") {
+      obj[key] = obj[key] * 2;
+    } else if (typeof obj[key] == "string") {
+      continue;
     }
   }
-  return counter;
+  return obj;
 }
-console.log(countKeys(user));
+console.log(doubleNumbers(stats));
