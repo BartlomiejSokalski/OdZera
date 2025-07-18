@@ -1148,20 +1148,36 @@ const js = require("@eslint/js");
 // }
 // console.log(sumValues(data));
 
-const cart = [
-  { name: "Banana", price: 2.5, quantity: 3 },
-  { name: "Milk", price: 3, quantity: 1 },
-  { name: "Bread", price: 4, quantity: 2 },
-];
+// const cart = [
+//   { name: "Banana", price: 2.5, quantity: 3 },
+//   { name: "Milk", price: 3, quantity: 1 },
+//   { name: "Bread", price: 4, quantity: 2 },
+// ];
 
-function checkout(cart) {
-  let multipleProducts = 0;
+// function checkout(cart) {
+//   let multipleProducts = 0;
 
-  for (const item of cart) {
-    multipleProducts = item.price * item.quantity + multipleProducts;
+//   for (const item of cart) {
+//     multipleProducts = item.price * item.quantity + multipleProducts;
+//   }
+
+//   return multipleProducts;
+// }
+
+// console.log(checkout(cart));
+const user = {
+  name: "Bartek",
+  age: 24,
+  country: "Polska",
+};
+
+function countKeys(obj) {
+  let counter = 0;
+  for (let key in obj) {
+    if (key) {
+      counter++;
+    }
   }
-
-  return multipleProducts;
+  return counter;
 }
-
-console.log(checkout(cart));
+console.log(countKeys(user));
