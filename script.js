@@ -1078,16 +1078,32 @@ const js = require("@eslint/js");
 // }
 // console.log(sumAll([7, 3]));
 
-function getMax(array) {
-  let max = 0;
-  for (let i = 0; i < array.length; i++) {
-    if (max < array[i]) {
-      max = array[i];
-    } else if (array[i] < 0 && max == 0) {
-      max = array[i];
+// function getMax(array) {
+//   let max = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     if (max < array[i]) {
+//       max = array[i];
+//     } else if (array[i] < 0 && max == 0) {
+//       max = array[i];
+//     }
+//   }
+//   return `najwieksza liczba to ${max}`;
+// }
+
+// console.log(getMax([-1, -3, -11, -1, -2]));
+function charFrequency(string) {
+  const result = {};
+
+  for (let i = 0; i < string.length; i++) {
+    const char = string[i];
+
+    if (result[char]) {
+      result[char] += 1;
+    } else {
+      result[char] = 1;
     }
   }
-  return `najwieksza liczba to ${max}`;
-}
 
-console.log(getMax([-1, -3, -11, -1, -2]));
+  return result;
+}
+console.log(charFrequency("hello"));
