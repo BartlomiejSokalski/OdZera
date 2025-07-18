@@ -1248,19 +1248,35 @@ const js = require("@eslint/js");
 // }
 // console.log(showUsers(users));
 
-const data = {
-  title: "nowość",
-  views: 1200,
-  category: "tech",
-};
+// const data = {
+//   title: "nowość",
+//   views: 1200,
+//   category: "tech",
+// };
 
-function uppercaseStrings(obj) {
-  for (let key in obj) {
-    if (typeof obj[key] == "string") {
-      obj[key] = obj[key].toUpperCase();
+// function uppercaseStrings(obj) {
+//   for (let key in obj) {
+//     if (typeof obj[key] == "string") {
+//       obj[key] = obj[key].toUpperCase();
+//     }
+//   }
+//   return obj;
+// }
+
+// console.log(uppercaseStrings(data));
+
+const cart = [
+  { name: "Laptop", price: 3000 },
+  { name: "Mouse", price: 100 },
+  { name: "Pad", price: 50 },
+];
+function getTotalPrice(cart) {
+  let sum = 0;
+  for (let key of cart) {
+    if (typeof key.price == "number") {
+      sum += key.price;
     }
   }
-  return obj;
+  return sum;
 }
-
-console.log(uppercaseStrings(data));
+console.log(getTotalPrice(cart));
