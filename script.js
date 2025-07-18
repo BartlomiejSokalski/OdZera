@@ -1182,21 +1182,38 @@ const js = require("@eslint/js");
 // }
 // console.log(countKeys(user));
 
-const stats = {
-  views: 150,
-  likes: 20,
-  author: "Bartek",
-  shares: 10,
+// const stats = {
+//   views: 150,
+//   likes: 20,
+//   author: "Bartek",
+//   shares: 10,
+// };
+
+// function doubleNumbers(obj) {
+//   for (let key in obj) {
+//     if (typeof obj[key] == "number") {
+//       obj[key] = obj[key] * 2;
+//     } else if (typeof obj[key] == "string") {
+//       continue;
+//     }
+//   }
+//   return obj;
+// }
+// console.log(doubleNumbers(stats));
+
+const scores = {
+  bartek: 120,
+  kasia: 95,
+  ola: 130,
+  michal: 150,
 };
 
-function doubleNumbers(obj) {
-  for (let key in obj) {
-    if (typeof obj[key] == "number") {
-      obj[key] = obj[key] * 2;
-    } else if (typeof obj[key] == "string") {
-      continue;
-    }
+function totalPoints(array) {
+  let sum = 0;
+  for (let key in array) {
+    sum += array[key];
   }
-  return obj;
+  return sum;
 }
-console.log(doubleNumbers(stats));
+
+console.log(totalPoints(scores));
