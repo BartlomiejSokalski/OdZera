@@ -1321,11 +1321,22 @@ const js = require("@eslint/js");
 // }
 // console.log(countChar("hellllo", "l"));
 
-function sumArray(arr) {
-  let sum = 0;
+// function sumArray(arr) {
+//   let sum = 0;
+//   for (let num of arr) {
+//     sum += num;
+//   }
+//   return sum;
+// }
+// console.log(sumArray([-1, 2, 3, 4]));
+
+function filterEvenNumbers(arr) {
+  const array = [];
   for (let num of arr) {
-    sum += num;
+    if (num % 2 == 0) {
+      array.push(num);
+    }
   }
-  return sum;
+  return array;
 }
-console.log(sumArray([-1, 2, 3, 4]));
+console.log(filterEvenNumbers([1, 2, 3, 4, 5, 6]));
