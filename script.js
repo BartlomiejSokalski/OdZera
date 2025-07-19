@@ -1265,18 +1265,27 @@ const js = require("@eslint/js");
 
 // console.log(uppercaseStrings(data));
 
-const cart = [
-  { name: "Laptop", price: 3000 },
-  { name: "Mouse", price: 100 },
-  { name: "Pad", price: 50 },
-];
-function getTotalPrice(cart) {
-  let sum = 0;
-  for (let key of cart) {
-    if (typeof key.price == "number") {
-      sum += key.price;
-    }
+// const cart = [
+//   { name: "Laptop", price: 3000 },
+//   { name: "Mouse", price: 100 },
+//   { name: "Pad", price: 50 },
+// ];
+// function getTotalPrice(cart) {
+//   let sum = 0;
+//   for (let key of cart) {
+//     if (typeof key.price == "number") {
+//       sum += key.price;
+//     }
+//   }
+//   return sum;
+// }
+// console.log(getTotalPrice(cart));
+
+function isEven(num) {
+  if (num % 2 == 0) {
+    return true;
+  } else {
+    return false;
   }
-  return sum;
 }
-console.log(getTotalPrice(cart));
+console.log(isEven(5));
