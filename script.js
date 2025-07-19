@@ -1375,16 +1375,31 @@ const js = require("@eslint/js");
 //   )
 // );
 
-function isAnagram(str1, str2) {
-  let str11 = str1.split("");
-  let str22 = str2.split("");
-  for (let letter of str11) {
-    if (str22.includes(letter)) {
-      return true;
-    } else {
-      return false;
-    }
+// function isAnagram(str1, str2) {
+//   let str11 = str1.split("");
+//   let str22 = str2.split("");
+//   for (let letter of str11) {
+//     if (str22.includes(letter)) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+// }
+// console.log(isAnagram("listen", "silent"));
+// console.log(isAnagram("hello", "world"));
+
+const data = {
+  user1: { age: 22 },
+  user2: { age: 30 },
+  user3: { age: 25 },
+};
+
+function sumAges(arr) {
+  let sum = 0;
+  for (let key in arr) {
+    sum += arr[key].age;
   }
+  return sum;
 }
-console.log(isAnagram("listen", "silent"));
-console.log(isAnagram("hello", "world"));
+console.log(sumAges(data));
