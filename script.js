@@ -1354,23 +1354,37 @@ const js = require("@eslint/js");
 // }
 // console.log(getFrequency(["a", "b", "a", "c", "b", "b"]));
 
-function findLongestWord(sentence) {
-  let countableWords = sentence.split(" ");
-  let biggestWord = "";
-  let biggestWord1 = 0;
+// function findLongestWord(sentence) {
+//   let countableWords = sentence.split(" ");
+//   let biggestWord = "";
+//   let biggestWord1 = 0;
 
-  for (let word of countableWords) {
-    if (biggestWord.length < word.length) {
-      biggestWord = word;
-      biggestWord1 = word.length;
+//   for (let word of countableWords) {
+//     if (biggestWord.length < word.length) {
+//       biggestWord = word;
+//       biggestWord1 = word.length;
+//     }
+//   }
+//   let result = `najdłuższe słowo to "${biggestWord}" i ma: ${biggestWord1} znaków `;
+//   return result;
+// }
+
+// console.log(
+//   findLongestWord(
+//     "Ala ma kota i ogromneg12312312312312312312o 12312312312312312312 hipopotama"
+//   )
+// );
+
+function isAnagram(str1, str2) {
+  let str11 = str1.split("");
+  let str22 = str2.split("");
+  for (let letter of str11) {
+    if (str22.includes(letter)) {
+      return true;
+    } else {
+      return false;
     }
   }
-  let result = `najdłuższe słowo to "${biggestWord}" i ma: ${biggestWord1} znaków `;
-  return result;
 }
-
-console.log(
-  findLongestWord(
-    "Ala ma kota i ogromneg12312312312312312312o 12312312312312312312 hipopotama"
-  )
-);
+console.log(isAnagram("listen", "silent"));
+console.log(isAnagram("hello", "world"));
