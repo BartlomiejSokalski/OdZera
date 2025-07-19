@@ -1404,18 +1404,45 @@ const js = require("@eslint/js");
 // }
 // console.log(sumAges(data));
 
-const users = [
-  { id: 1, name: "Anna" },
-  { id: 2, name: "Bartek" },
+// const users = [
+//   { id: 1, name: "Anna" },
+//   { id: 2, name: "Bartek" },
+// ];
+
+// function chagneArray(arr) {
+//   let counter = 0;
+//   let obj = {};
+//   for (let key in arr) {
+//     counter++;
+//     obj[counter] = arr[key];
+//   }
+//   return JSON.stringify(obj);
+// }
+// console.log(chagneArray(users));
+
+let cart = [
+  { id: 2, name: "Pen", price: 5 },
+  { id: 2, name: "Pen", price: 5 },
+  { id: 2, name: "Pen", price: 5 },
 ];
 
-function chagneArray(arr) {
-  let counter = 0;
-  let obj = {};
-  for (let key in arr) {
-    counter++;
-    obj[counter] = arr[key];
-  }
-  return JSON.stringify(obj);
+function addToCart(cart, item) {
+  cart.push(item);
+  return JSON.stringify(cart);
 }
-console.log(chagneArray(users));
+console.log(addToCart(cart, { id: 1, name: "Book", price: 20 }));
+
+function removeFromCart(cart, id) {
+  cart.splice(id, 1);
+  return JSON.stringify(cart);
+}
+console.log(removeFromCart(cart, 1));
+
+function getTotal(arr) {
+  let sum = 0;
+  for (let item of arr) {
+    sum += item.price;
+  }
+  return sum;
+}
+console.log(getTotal(cart));
