@@ -1389,17 +1389,33 @@ const js = require("@eslint/js");
 // console.log(isAnagram("listen", "silent"));
 // console.log(isAnagram("hello", "world"));
 
-const data = {
-  user1: { age: 22 },
-  user2: { age: 30 },
-  user3: { age: 25 },
-};
+// const data = {
+//   user1: { age: 22 },
+//   user2: { age: 30 },
+//   user3: { age: 25 },
+// };
 
-function sumAges(arr) {
-  let sum = 0;
+// function sumAges(arr) {
+//   let sum = 0;
+//   for (let key in arr) {
+//     sum += arr[key].age;
+//   }
+//   return sum;
+// }
+// console.log(sumAges(data));
+
+const users = [
+  { id: 1, name: "Anna" },
+  { id: 2, name: "Bartek" },
+];
+
+function chagneArray(arr) {
+  let counter = 0;
+  let obj = {};
   for (let key in arr) {
-    sum += arr[key].age;
+    counter++;
+    obj[counter] = arr[key];
   }
-  return sum;
+  return JSON.stringify(obj);
 }
-console.log(sumAges(data));
+console.log(chagneArray(users));
