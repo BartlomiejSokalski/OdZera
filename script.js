@@ -1376,18 +1376,22 @@ const js = require("@eslint/js");
 // );
 
 // function isAnagram(str1, str2) {
+//   let counter = 0;
 //   let str11 = str1.split("");
 //   let str22 = str2.split("");
 //   for (let letter of str11) {
 //     if (str22.includes(letter)) {
-//       return true;
+//       counter++;
 //     } else {
 //       return false;
 //     }
 //   }
+//   if (counter) {
+//     return true;
+//   } else return false;
 // }
 // console.log(isAnagram("listen", "silent"));
-// console.log(isAnagram("hello", "world"));
+// console.log(isAnagram("wello", "world"));
 
 // const data = {
 //   user1: { age: 22 },
@@ -1420,29 +1424,80 @@ const js = require("@eslint/js");
 // }
 // console.log(chagneArray(users));
 
-let cart = [
-  { id: 2, name: "Pen", price: 5 },
-  { id: 2, name: "Pen", price: 5 },
-  { id: 2, name: "Pen", price: 5 },
-];
+// let cart = [
+//   { id: 2, name: "Pen", price: 5 },
+//   { id: 3, name: "Pen", price: 5 },
+//   { id: 4, name: "Pen", price: 5 },
+// ];
 
-function addToCart(cart, item) {
-  cart.push(item);
-  return JSON.stringify(cart);
-}
-console.log(addToCart(cart, { id: 1, name: "Book", price: 20 }));
+// function addToCart(cart, item) {
+//   cart.push(item);
+//   return JSON.stringify(cart);
+// }
+// console.log(addToCart(cart, { id: 1, name: "Book", price: 20 }));
 
-function removeFromCart(cart, id) {
-  cart.splice(id, 1);
-  return JSON.stringify(cart);
-}
-console.log(removeFromCart(cart, 1));
+// function removeFromCart(cart, id) {
+//   cart.splice(id, 1);
+//   return JSON.stringify(cart);
+// }
+// console.log(removeFromCart(cart, 1));
 
-function getTotal(arr) {
-  let sum = 0;
-  for (let item of arr) {
-    sum += item.price;
+// function getTotal(arr) {
+//   let sum = 0;
+//   for (let item of arr) {
+//     sum += item.price;
+//   }
+//   return sum;
+// }
+// console.log(getTotal(cart));
+
+// napisz funkcje która jako argument ma cos a zwróci wyraz napisany od tyłu
+
+// function reverse(str) {
+//   str = str.split("").reverse().join("");
+//   return str;
+// }
+// console.log(reverse("hello"));
+
+// function reverse(str) {
+//   let result = "";
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     result += str[i];
+//   }
+//   return result;
+// }
+// console.log(reverse("hello"));
+
+// napisz funckcje ktora przyjmie jakąkolwiek liczbe na wejsciu i zwróci liczbe która będzie zformatowana w ten sposó że bedzie zawierałą spacje jako separator tyśieciy i dwa miejsca po przecinku 1 000,00 tysiac
+
+function coolNumber(num) {
+  let counter = 0;
+  const arr = [];
+  num = num.toFixed(2);
+  num = num.toString();
+
+  for (let i = 0; i < num.length; i++) {
+    arr.push(num[i]);
+    if (num[i] == ".") {
+      arr.splice(i, 1, ",");
+    }
   }
-  return sum;
+
+  for (let i = num.length - 3; i >= 0; i--) {
+    if (arr[i] != ",") {
+      counter++;
+      if (counter == 3 && i != 0) {
+        arr.splice(i, 0, " ");
+        counter = 0;
+      }
+    }
+    // if (arr[i] == ",") {
+    //   counter = 0;
+    // }
+  }
+  //   let strArr = arr.toString();
+  let strArr = arr.join(" ");
+
+  return strArr;
 }
-console.log(getTotal(cart));
+console.log(coolNumber(1000));
