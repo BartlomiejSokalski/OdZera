@@ -1330,13 +1330,26 @@ const js = require("@eslint/js");
 // }
 // console.log(sumArray([-1, 2, 3, 4]));
 
-function filterEvenNumbers(arr) {
-  const array = [];
-  for (let num of arr) {
-    if (num % 2 == 0) {
-      array.push(num);
+// function filterEvenNumbers(arr) {
+//   const array = [];
+//   for (let num of arr) {
+//     if (num % 2 == 0) {
+//       array.push(num);
+//     }
+//   }
+//   return array;
+// }
+// console.log(filterEvenNumbers([1, 2, 3, 4, 5, 6]));
+
+function getFrequency(arr) {
+  let obj = {};
+  for (let letter of arr) {
+    if (obj[letter]) {
+      obj[letter] += 1;
+    } else {
+      obj[letter] = 1;
     }
   }
-  return array;
+  return obj;
 }
-console.log(filterEvenNumbers([1, 2, 3, 4, 5, 6]));
+console.log(getFrequency(["a", "b", "a", "c", "b", "b"]));
