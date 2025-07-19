@@ -1301,11 +1301,22 @@ const js = require("@eslint/js");
 // }
 // console.log(maxOfThree(6, 3, 5));
 
-function reverseString(str) {
-  let word = "";
-  for (let i = str.length - 1; i >= 0; i--) {
-    word += str[i];
+// function reverseString(str) {
+//   let word = "";
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     word += str[i];
+//   }
+//   return word;
+// }
+// console.log(reverseString("hello"));
+
+function countChar(str, char) {
+  let counter = 0;
+  for (let letter of str) {
+    if (letter == char) {
+      counter++;
+    }
   }
-  return word;
+  return counter;
 }
-console.log(reverseString("hello"));
+console.log(countChar("hellllo", "l"));
