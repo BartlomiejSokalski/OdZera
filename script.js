@@ -1281,11 +1281,22 @@ const js = require("@eslint/js");
 // }
 // console.log(getTotalPrice(cart));
 
-function isEven(num) {
-  if (num % 2 == 0) {
-    return true;
+// function isEven(num) {
+//   if (num % 2 == 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// console.log(isEven(5));
+
+function maxOfThree(a, b, c) {
+  if (a > b && a > c) {
+    return a;
+  } else if (b > a && b > c) {
+    return b;
   } else {
-    return false;
+    return c;
   }
 }
-console.log(isEven(5));
+console.log(maxOfThree(6, 3, 5));
