@@ -1310,13 +1310,22 @@ const js = require("@eslint/js");
 // }
 // console.log(reverseString("hello"));
 
-function countChar(str, char) {
-  let counter = 0;
-  for (let letter of str) {
-    if (letter == char) {
-      counter++;
-    }
+// function countChar(str, char) {
+//   let counter = 0;
+//   for (let letter of str) {
+//     if (letter == char) {
+//       counter++;
+//     }
+//   }
+//   return counter;
+// }
+// console.log(countChar("hellllo", "l"));
+
+function sumArray(arr) {
+  let sum = 0;
+  for (let num of arr) {
+    sum += num;
   }
-  return counter;
+  return sum;
 }
-console.log(countChar("hellllo", "l"));
+console.log(sumArray([-1, 2, 3, 4]));
