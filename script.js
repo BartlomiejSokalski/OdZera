@@ -1341,15 +1341,36 @@ const js = require("@eslint/js");
 // }
 // console.log(filterEvenNumbers([1, 2, 3, 4, 5, 6]));
 
-function getFrequency(arr) {
-  let obj = {};
-  for (let letter of arr) {
-    if (obj[letter]) {
-      obj[letter] += 1;
-    } else {
-      obj[letter] = 1;
+// function getFrequency(arr) {
+//   let obj = {};
+//   for (let letter of arr) {
+//     if (obj[letter]) {
+//       obj[letter] += 1;
+//     } else {
+//       obj[letter] = 1;
+//     }
+//   }
+//   return obj;
+// }
+// console.log(getFrequency(["a", "b", "a", "c", "b", "b"]));
+
+function findLongestWord(sentence) {
+  let countableWords = sentence.split(" ");
+  let biggestWord = "";
+  let biggestWord1 = 0;
+
+  for (let word of countableWords) {
+    if (biggestWord.length < word.length) {
+      biggestWord = word;
+      biggestWord1 = word.length;
     }
   }
-  return obj;
+  let result = `najdłuższe słowo to "${biggestWord}" i ma: ${biggestWord1} znaków `;
+  return result;
 }
-console.log(getFrequency(["a", "b", "a", "c", "b", "b"]));
+
+console.log(
+  findLongestWord(
+    "Ala ma kota i ogromneg12312312312312312312o 12312312312312312312 hipopotama"
+  )
+);
