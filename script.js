@@ -1290,13 +1290,22 @@ const js = require("@eslint/js");
 // }
 // console.log(isEven(5));
 
-function maxOfThree(a, b, c) {
-  if (a > b && a > c) {
-    return a;
-  } else if (b > a && b > c) {
-    return b;
-  } else {
-    return c;
+// function maxOfThree(a, b, c) {
+//   if (a > b && a > c) {
+//     return a;
+//   } else if (b > a && b > c) {
+//     return b;
+//   } else {
+//     return c;
+//   }
+// }
+// console.log(maxOfThree(6, 3, 5));
+
+function reverseString(str) {
+  let word = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    word += str[i];
   }
+  return word;
 }
-console.log(maxOfThree(6, 3, 5));
+console.log(reverseString("hello"));
