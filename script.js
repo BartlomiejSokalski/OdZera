@@ -1516,16 +1516,25 @@
 // }
 // console.log(names(arr));
 
-const arr = [17, 22, 15, 30];
+// const arr = [17, 22, 15, 30];
 
-function checkAge(arr) {
+// function checkAge(arr) {
+//   return arr.map((x) => {
+//     if (x < 18) {
+//       return x + 1;
+//     } else {
+//       return x;
+//     }
+//   });
+// }
+
+// console.log(checkAge(arr));
+
+const arr = ["foo", "bar", "baz"];
+
+function checkLength(arr) {
   return arr.map((x) => {
-    if (x < 18) {
-      return x + 1;
-    } else {
-      return x;
-    }
+    return x.length;
   });
 }
-
-console.log(checkAge(arr));
+console.log(checkLength(arr));
