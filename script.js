@@ -1546,9 +1546,23 @@
 // }
 // console.log(flatten(arr.flat()));
 
-const arr = [1, 2, 3, 4, 5, 6];
+// const arr = [1, 2, 3, 4, 5, 6];
 
-function square(arr) {
-  return arr.map((x) => x * x);
+// function square(arr) {
+//   return arr.map((x) => x * x);
+// }
+// console.log(square(arr));
+
+//--------------------------------
+// const prices = [10, 20, 30, 40];
+
+// function add(arr) {
+//   return arr.map((x) => x + 5);
+// }
+// console.log(add(prices));
+
+const names = ["anna", "bartek", "ola"];
+function goBig(arr) {
+  return arr.map((x) => x.toUpperCase());
 }
-console.log(square(arr));
+console.log(goBig(names));
