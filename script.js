@@ -7,7 +7,7 @@
 //     let cutSurrname = person.slice(0, shortSurrname);
 //     let dot = ".";
 
-const js = require("@eslint/js");
+// const js = require("@eslint/js");
 
 //     let allTogether = cutSurrname + dot;
 //     return allTogether;
@@ -1459,45 +1459,49 @@ const js = require("@eslint/js");
 // }
 // console.log(reverse("hello"));
 
-// function reverse(str) {
+// function reverse2(str) {
 //   let result = "";
 //   for (let i = str.length - 1; i >= 0; i--) {
 //     result += str[i];
 //   }
 //   return result;
 // }
-// console.log(reverse("hello"));
+// console.log(reverse2("hello"));
 
 // napisz funckcje ktora przyjmie jakąkolwiek liczbe na wejsciu i zwróci liczbe która będzie zformatowana w ten sposó że bedzie zawierałą spacje jako separator tyśieciy i dwa miejsca po przecinku 1 000,00 tysiac
 
-function coolNumber(num) {
-  let counter = 0;
-  const arr = [];
-  num = num.toFixed(2);
-  num = num.toString();
+// function coolNumber(num) {
+//   let counter = 0;
+//   const arr = [];
+//   num = num.toFixed(2);
+//   num = num.toString();
 
-  for (let i = 0; i < num.length; i++) {
-    arr.push(num[i]);
-    if (num[i] == ".") {
-      arr.splice(i, 1, ",");
-    }
-  }
+//   for (let i = 0; i < num.length; i++) {
+//     arr.push(num[i]);
+//     if (num[i] == ".") {
+//       arr.splice(i, 1, ",");
+//     }
+//   }
 
-  for (let i = num.length - 3; i >= 0; i--) {
-    if (arr[i] != ",") {
-      counter++;
-      if (counter == 3 && i != 0) {
-        arr.splice(i, 0, " ");
-        counter = 0;
-      }
-    }
-    // if (arr[i] == ",") {
-    //   counter = 0;
-    // }
-  }
-  //   let strArr = arr.toString();
-  let strArr = arr.join(" ");
+//   for (let i = num.length - 3; i >= 0; i--) {
+//     if (arr[i] != ",") {
+//       counter++;
+//       if (counter == 3 && i != 0) {
+//         arr.splice(i, 0, " ");
+//         counter = 0;
+//       }
+//     }
+//   }
 
-  return strArr;
+//   let strArr = arr.join(" ");
+
+//   return strArr;
+// }
+// console.log(coolNumber(1000));
+
+const arr = [1, 2, 3, 4, 5];
+
+function double(arr) {
+  return arr.map((x) => x * 2);
 }
-console.log(coolNumber(1000));
+console.log(double(arr));
