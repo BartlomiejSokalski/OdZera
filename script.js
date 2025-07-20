@@ -1600,9 +1600,25 @@
 // }
 // console.log(JSON.stringify(convertToObj(ids)));
 
-const list = ["jablko", "banan", "pomarancza"];
+// const list = ["jablko", "banan", "pomarancza"];
 
-function addIndex(arr) {
-  return arr.map((x, index) => `${index + 1}. ${x}`);
+// function addIndex(arr) {
+//   return arr.map((x, index) => `${index + 1}. ${x}`);
+// }
+// console.log(addIndex(list));
+// ---------------------------------------------
+// const names = ["Anna", "Bartek", "Ola"];
+
+// function convertToObj(arr) {
+//   return arr.map((x) => {
+//     return { name: x };
+//   });
+// }
+// console.log(convertToObj(names));
+
+const letters = ["a", "b", "c"];
+
+function repeat(arr) {
+  return arr.map((x) => x.repeat(3));
 }
-console.log(addIndex(list));
+console.log(repeat(letters));
