@@ -1539,9 +1539,16 @@
 // }
 // console.log(checkLength(arr));
 
-const arr = [[1, 2], [3, 4], [5]];
+// const arr = [[1, 2], [3, 4], [5]];
 
-function flatten(arr) {
-  return arr.map((x) => x * 1);
+// function flatten(arr) {
+//   return arr.map((x) => x * 1);
+// }
+// console.log(flatten(arr.flat()));
+
+const arr = [1, 2, 3, 4, 5, 6];
+
+function square(arr) {
+  return arr.map((x) => x * x);
 }
-console.log(flatten(arr.flat()));
+console.log(square(arr));
