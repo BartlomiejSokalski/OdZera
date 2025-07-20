@@ -1735,9 +1735,58 @@
 // }
 // console.log(expensive(products));
 
-const names = ["Anna", "Bartek", "Ania", "Tomek"];
+// const names = ["Anna", "Bartek", "Ania", "Tomek"];
 
-function startsWithB(arr) {
-  return arr.some((x) => x.toLowerCase().startsWith("b"));
+// function startsWithB(arr) {
+//   return arr.some((x) => x.toLowerCase().startsWith("b"));
+// }
+// console.log(startsWithB(names));
+
+// const arr = [3, 6, 9, 12];
+
+// function div(arr) {
+//   return arr.find((x) => x % 4 == 0);
+// }
+// console.log(div(arr));
+
+// const arr = ["Ola", "Anna", "Bartek"];
+
+// function startsWithA(arr) {
+//   return arr.find((x) => x.toLowerCase().startsWith("a"));
+// }
+// console.log(startsWithA(arr));
+
+// const people = [
+//   { name: "Anna", age: 25 },
+//   { name: "Tomek", age: 17 },
+// ];
+
+// function isAdult(arr) {
+//   return arr.find((x) => x.age > 18);
+// }
+// console.log(isAdult(people));
+
+// const animals = ["pies", "kot", "słoń", "koń"];
+
+// function hasFourLetters(arr) {
+//   return arr.find((x) => x.length == 4);
+// }
+// console.log(hasFourLetters(animals));
+
+// const ids = [
+//   { id: 1, active: false },
+//   { id: 2, active: false },
+//   { id: 3, active: true },
+// ];
+
+// function isActive(arr) {
+//   return arr.find((x) => x.active == true);
+// }
+// console.log(isActive(ids));
+
+const price = [10, 15, 20, 25];
+
+function isCheap(arr) {
+  return arr.find((x) => x > 18 && x < 24);
 }
-console.log(startsWithB(names));
+console.log(isCheap(price));
