@@ -1616,9 +1616,28 @@
 // }
 // console.log(convertToObj(names));
 
-const letters = ["a", "b", "c"];
+// const letters = ["a", "b", "c"];
 
-function repeat(arr) {
-  return arr.map((x) => x.repeat(3));
+// function repeat(arr) {
+//   return arr.map((x) => x.repeat(3));
+// }
+// console.log(repeat(letters));
+// -----------------------------------------------
+// const data = [
+//   { name: "Anna", age: 20 },
+//   { name: "Tomek", age: 25 },
+// ];
+
+// function convertToString(arr) {
+//   return arr.map((x) => `${x.name} (${x.age} lat)`);
+// }
+// console.log(convertToString(data));
+
+const numbers = [1, 2, 3];
+
+function convertToObj(arr) {
+  return arr.map((x) => {
+    return { id: x, value: `wartość ${x}` };
+  });
 }
-console.log(repeat(letters));
+console.log(JSON.stringify(convertToObj(numbers)));
