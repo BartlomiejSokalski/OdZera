@@ -1742,6 +1742,8 @@
 // }
 // console.log(startsWithB(names));
 
+// ------------------------------------------------------
+
 // const arr = [3, 6, 9, 12];
 
 // function div(arr) {
@@ -1784,9 +1786,65 @@
 // }
 // console.log(isActive(ids));
 
-const price = [10, 15, 20, 25];
+// const price = [10, 15, 20, 25];
 
-function isCheap(arr) {
-  return arr.find((x) => x > 18 && x < 24);
+// function isCheap(arr) {
+//   return arr.find((x) => x > 18 && x < 24);
+// }
+// console.log(isCheap(price));
+
+// ------------------------------------------------
+// const numbers = [4, 1, 7, 3];
+
+// function sort(arr) {
+//   return arr.sort((a, b) => a - b);
+// }
+// console.log(sort(numbers));
+
+// const letters = ["d", "a", "c", "b"];
+// // wynik: ["a", "b", "c", "d"]
+
+// function sort(arr) {
+//   return arr.sort();
+// }
+// console.log(sort(letters));
+
+// const numbers = [2, 9, 1, 6];
+// // wynik: [9, 6, 2, 1]
+
+// function sort(arr) {
+//   return arr.sort((a, b) => b - a);
+// }
+// console.log(sort(numbers));
+
+// const names = ["Bartek", "Tomek", "Anna", "Zosia"];
+// // wynik: ["Anna", "Bartek", "Tomek", "Zosia"]
+
+// function sort(arr) {
+//   return arr.sort();
+// }
+// console.log(sort(names));
+
+// const people = [
+//   { name: "Ola", age: 25 },
+//   { name: "Ania", age: 19 },
+//   { name: "Tomek", age: 30 },
+// ];
+// // wynik: wiek rosnąco
+
+// function sort(arr) {
+//   return arr.sort((a, b) => a.age - b.age);
+// }
+// console.log(sort(people));
+
+const products = [
+  { name: "Kawa", price: 20 },
+  { name: "Mleko", price: 5 },
+  { name: "Chleb", price: 3 },
+];
+// wynik: cena od najwyższej
+
+function sort(arr) {
+  console.log(arr);
 }
-console.log(isCheap(price));
+console.log(JSON.stringify(products));
