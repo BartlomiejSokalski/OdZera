@@ -1686,9 +1686,58 @@
 // }
 // console.log(JSON.stringify(expensive(products)));
 
+// const names = ["Anna", "Bartek", "Ania", "Tomek"];
+
+// function isA(arr) {
+//   return arr.filter((x) => x[0] == "A");
+// }
+// console.log(isA(names));
+
+// ------------------------------------------------------
+// const numbers = [1, 3, 5, 6];
+
+// function isEven(arr) {
+//   return arr.some((x) => x % 2 == 0);
+// }
+// console.log(isEven(numbers));
+
+// const words = ["kot", "pies", "słoń"];
+
+// function moreLetters(arr) {
+//   return arr.every((x) => x.length > 2);
+// }
+// console.log(moreLetters(words));
+
+// const users = [
+//   { name: "Anna", active: true },
+//   { name: "Tomek", active: false },
+// ];
+
+// function isActive(arr) {
+//   return arr.some((x) => (x.active == true ? true : false));
+// }
+// console.log(isActive(users));
+
+// const temperatures = [21, 25, 30, 10];
+
+// function isHot(arr) {
+//   return arr.every((x) => x > 20);
+// }
+// console.log(isHot(temperatures));
+
+// const products = [
+//   { name: "Mleko", price: 5 + "zł" },
+//   { name: "Chleb", price: 3 },
+// ];
+
+// function expensive(arr) {
+//   return arr.every((x) => x.price > 2 + "zł");
+// }
+// console.log(expensive(products));
+
 const names = ["Anna", "Bartek", "Ania", "Tomek"];
 
-function isA(arr) {
-  return arr.filter((x) => x[0] == "A");
+function startsWithB(arr) {
+  return arr.some((x) => x.toLowerCase().startsWith("b"));
 }
-console.log(isA(names));
+console.log(startsWithB(names));
