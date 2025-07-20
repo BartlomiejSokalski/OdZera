@@ -1499,9 +1499,19 @@
 // }
 // console.log(coolNumber(1000));
 
-const arr = [1, 2, 3, 4, 5];
+// const arr = [1, 2, 3, 4, 5];
 
-function double(arr) {
-  return arr.map((x) => x * 2);
+// function double(arr) {
+//   return arr.map((x) => x * 2);
+// }
+// console.log(double(arr));
+
+const arr = [
+  { name: "A", age: 20 },
+  { name: "B", age: 25 },
+];
+
+function names(arr) {
+  return arr.map((item) => item.name);
 }
-console.log(double(arr));
+console.log(names(arr));
