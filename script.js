@@ -1574,19 +1574,35 @@
 // }
 // console.log(zl(numbers));
 
-const users = [
-  { name: "Anna", city: "Warszawa" },
-  { name: "Tomek", city: "Poznań" },
-];
-const cityCase = {
-  Warszawa: "Warszawie",
-  Poznań: "Poznaniu",
-};
+// const users = [
+//   { name: "Anna", city: "Warszawa" },
+//   { name: "Tomek", city: "Poznań" },
+// ];
+// const cityCase = {
+//   Warszawa: "Warszawie",
+//   Poznań: "Poznaniu",
+// };
 
-function concat(arr) {
-  return arr.map((x) => {
-    const miasto = cityCase[x.city] || x.city;
-    return `${x.name} mieszka w ${miasto}`;
-  });
+// function concat(arr) {
+//   return arr.map((x) => {
+//     const miasto = cityCase[x.city] || x.city;
+//     return `${x.name} mieszka w ${miasto}`;
+//   });
+// }
+// console.log(concat(users));
+// -----------------------------------------
+// const ids = [1, 2, 3];
+
+// function convertToObj(arr) {
+//   return arr.map((x) => {
+//     return { id: x };
+//   });
+// }
+// console.log(JSON.stringify(convertToObj(ids)));
+
+const list = ["jablko", "banan", "pomarancza"];
+
+function addIndex(arr) {
+  return arr.map((x, index) => `${index + 1}. ${x}`);
 }
-console.log(concat(users));
+console.log(addIndex(list));
