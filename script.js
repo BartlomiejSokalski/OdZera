@@ -1530,11 +1530,18 @@
 
 // console.log(checkAge(arr));
 
-const arr = ["foo", "bar", "baz"];
+// const arr = ["foo", "bar", "baz"];
 
-function checkLength(arr) {
-  return arr.map((x) => {
-    return x.length;
-  });
+// function checkLength(arr) {
+//   return arr.map((x) => {
+//     return x.length;
+//   });
+// }
+// console.log(checkLength(arr));
+
+const arr = [[1, 2], [3, 4], [5]];
+
+function flatten(arr) {
+  return arr.map((x) => x * 1);
 }
-console.log(checkLength(arr));
+console.log(flatten(arr.flat()));
