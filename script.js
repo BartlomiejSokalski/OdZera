@@ -1561,8 +1561,32 @@
 // }
 // console.log(add(prices));
 
-const names = ["anna", "bartek", "ola"];
-function goBig(arr) {
-  return arr.map((x) => x.toUpperCase());
+// const names = ["anna", "bartek", "ola"];
+// function goBig(arr) {
+//   return arr.map((x) => x.toUpperCase());
+// }
+// console.log(goBig(names));
+// -----------------------------------------
+// const numbers = [5, 10, 15];
+
+// function zl(arr) {
+//   return arr.map((x) => x + " zł");
+// }
+// console.log(zl(numbers));
+
+const users = [
+  { name: "Anna", city: "Warszawa" },
+  { name: "Tomek", city: "Poznań" },
+];
+const cityCase = {
+  Warszawa: "Warszawie",
+  Poznań: "Poznaniu",
+};
+
+function concat(arr) {
+  return arr.map((x) => {
+    const miasto = cityCase[x.city] || x.city;
+    return `${x.name} mieszka w ${miasto}`;
+  });
 }
-console.log(goBig(names));
+console.log(concat(users));
