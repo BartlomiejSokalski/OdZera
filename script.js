@@ -1633,11 +1633,62 @@
 // }
 // console.log(convertToString(data));
 
-const numbers = [1, 2, 3];
+// const numbers = [1, 2, 3];
 
-function convertToObj(arr) {
-  return arr.map((x) => {
-    return { id: x, value: `wartość ${x}` };
-  });
+// function convertToObj(arr) {
+//   return arr.map((x) => {
+//     return { id: x, value: `wartość ${x}` };
+//   });
+// }
+// console.log(JSON.stringify(convertToObj(numbers)));
+
+//-----------------------------------
+
+// const nums = [1, 2, 3, 4, 5, 6];
+
+// function isEven(arr) {
+//   return arr.filter((x) => x % 2 == 0);
+// }
+// console.log(isEven(nums));
+
+// const words = ["kot", "pies", "słoń", "a"];
+
+// function long(arr) {
+//   return arr.filter((x) => x.length > 2);
+// }
+// console.log(long(words));
+
+// const users = [
+//   { name: "Anna", active: true },
+//   { name: "Tomek", active: false },
+// ];
+
+// function isTrue(arr) {
+//   return arr.filter((x) => x.active == true);
+// }
+// console.log(JSON.stringify(isTrue(users)));
+
+// const temperatures = [18, 22, 29, 15, 30];
+
+// function isHot(arr) {
+//   return arr.filter((x) => x > 20);
+// }
+// console.log(isHot(temperatures));
+
+// const products = [
+//   { name: "Mleko", price: 5 },
+//   { name: "Chleb", price: 3 },
+//   { name: "Kawa", price: 20 },
+// ];
+
+// function expensive(arr) {
+//   return arr.filter((x) => x.price > 5);
+// }
+// console.log(JSON.stringify(expensive(products)));
+
+const names = ["Anna", "Bartek", "Ania", "Tomek"];
+
+function isA(arr) {
+  return arr.filter((x) => x[0] == "A");
 }
-console.log(JSON.stringify(convertToObj(numbers)));
+console.log(isA(names));
