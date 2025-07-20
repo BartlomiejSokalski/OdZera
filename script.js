@@ -1506,12 +1506,26 @@
 // }
 // console.log(double(arr));
 
-const arr = [
-  { name: "A", age: 20 },
-  { name: "B", age: 25 },
-];
+// const arr = [
+//   { name: "A", age: 20 },
+//   { name: "B", age: 25 },
+// ];
 
-function names(arr) {
-  return arr.map((item) => item.name);
+// function names(arr) {
+//   return arr.map((item) => item.name);
+// }
+// console.log(names(arr));
+
+const arr = [17, 22, 15, 30];
+
+function checkAge(arr) {
+  return arr.map((x) => {
+    if (x < 18) {
+      return x + 1;
+    } else {
+      return x;
+    }
+  });
 }
-console.log(names(arr));
+
+console.log(checkAge(arr));
